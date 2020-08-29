@@ -10,61 +10,85 @@ public class ExerciseInfo {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long exerciseInfoId;
 
     @Column
-    private String activityTitle;
+    private String exerciseTitle;
 
     @Column
-    private String activityDescription;
+    private String exerciseDescription;
 
     @Column
-    private int activityDuration;
+    private int exerciseDuration;
+
+    @Column
+    private String targetMuscle;
+
+    @Column
+    private int numberOfSets;
 
     @Column
     private int numberOfReps;
 
     public Long getId() {
-        return id;
+        return exerciseInfoId;
     }
 
     public ExerciseInfo() {
 
     }
 
-    public ExerciseInfo(String activityTitle, String activityDescription, int activityDuration, int numberOfReps) {
-        this.activityTitle = activityTitle;
-        this.activityDescription = activityDescription;
-        this.activityDuration = activityDuration;
+    public ExerciseInfo(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+        this.exerciseTitle = exerciseTitle;
+        this.exerciseDescription = exerciseDescription;
+        this.exerciseDuration = exerciseDuration;
+        this.targetMuscle = targetMuscle;
+        this.numberOfSets = numberOfSets;
         this.numberOfReps = numberOfReps;
     }
 
+    public String getTargetMuscle() {
+        return targetMuscle;
+    }
+
+    public void setTargetMuscle(String targetMuscle) {
+        this.targetMuscle = targetMuscle;
+    }
+
+    public int getNumberOfSets() {
+        return numberOfSets;
+    }
+
+    public void setNumberOfSets(int numberOfSets) {
+        this.numberOfSets = numberOfSets;
+    }
+
     public void setId(Long id) {
-        this.id = id;
+        this.exerciseInfoId = id;
     }
 
-    public String getActivityTitle() {
-        return activityTitle;
+    public String getExerciseTitle() {
+        return exerciseTitle;
     }
 
-    public void setActivityTitle(String activityTitle) {
-        this.activityTitle = activityTitle;
+    public void setExerciseTitle(String activityTitle) {
+        this.exerciseTitle = activityTitle;
     }
 
-    public String getActivityDescription() {
-        return activityDescription;
+    public String getExerciseDescription() {
+        return exerciseDescription;
     }
 
-    public void setActivityDescription(String activityDescription) {
-        this.activityDescription = activityDescription;
+    public void setExerciseDescription(String activityDescription) {
+        this.exerciseDescription = activityDescription;
     }
 
-    public int getActivityDuration() {
-        return activityDuration;
+    public int getExerciseDuration() {
+        return exerciseDuration;
     }
 
-    public void setActivityDuration(int activityDuration) {
-        this.activityDuration = activityDuration;
+    public void setExerciseDuration(int activityDuration) {
+        this.exerciseDuration = activityDuration;
     }
 
     public int getNumberOfReps() {
@@ -74,6 +98,7 @@ public class ExerciseInfo {
     public void setNumberOfReps(int numberOfReps) {
         this.numberOfReps = numberOfReps;
     }
+
 }
 
 
