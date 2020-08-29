@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Pumpit {
+public class ExerciseInfo {
 
     @Id
     @GeneratedValue
@@ -28,11 +28,11 @@ public class Pumpit {
         return id;
     }
 
-    public Pumpit() {
+    public ExerciseInfo() {
 
     }
 
-    public Pumpit(String activityTitle, String activityDescription, int activityDuration, int numberOfReps) {
+    public ExerciseInfo(String activityTitle, String activityDescription, int activityDuration, int numberOfReps) {
         this.activityTitle = activityTitle;
         this.activityDescription = activityDescription;
         this.activityDuration = activityDuration;
