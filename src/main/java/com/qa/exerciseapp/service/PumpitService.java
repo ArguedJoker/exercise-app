@@ -32,9 +32,9 @@ public class PumpitService {
 
     public ExerciseInfo updateActivity(Long id, ExerciseInfo exerciseInfo) {
         ExerciseInfo update = findActivityById(id);
-        update.setActivityTitle(exerciseInfo.getActivityTitle());
-        update.setActivityDescription(exerciseInfo.getActivityDescription());
-        update.setActivityDuration(exerciseInfo.getActivityDuration());
+        update.setExerciseTitle(exerciseInfo.getExerciseTitle());
+        update.setExerciseDescription(exerciseInfo.getExerciseDescription());
+        update.setExerciseDuration(exerciseInfo.getExerciseDuration());
         update.setNumberOfReps(exerciseInfo.getNumberOfReps());
         return this.repo.save(update);
     }

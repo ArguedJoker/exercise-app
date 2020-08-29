@@ -24,9 +24,9 @@ public class PumpitController {
         return this.pumpitService.readAllActivities();
     }
 
-    @PostMapping("/createActivity")
+    /*@PostMapping("/createActivity")
     public ExerciseInfo createActivity(ExerciseInfo exerciseInfo) {
-
+        return this.pumpitService.createActivity()
     }
-
+*/
 }

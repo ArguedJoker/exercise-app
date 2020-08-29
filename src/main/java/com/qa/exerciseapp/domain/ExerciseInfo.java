@@ -38,7 +38,8 @@ public class ExerciseInfo {
 
     }
 
-    public ExerciseInfo(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+    public ExerciseInfo(Long exerciseInfoId, String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+        this.exerciseInfoId = exerciseInfoId;
         this.exerciseTitle = exerciseTitle;
         this.exerciseDescription = exerciseDescription;
         this.exerciseDuration = exerciseDuration;
