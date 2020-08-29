@@ -10,7 +10,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long userId;
 
     @Column
     private String firstName;
@@ -43,7 +43,7 @@ public class User {
         this.password = password;
     }
 
-    public void setId(Long id) {this.id = id;}
+    public void setId(Long id) {this.userId = id;}
 
     public String getFirstName() {
         return firstName;
