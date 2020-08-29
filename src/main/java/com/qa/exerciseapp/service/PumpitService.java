@@ -35,6 +35,8 @@ public class PumpitService {
         update.setExerciseTitle(exerciseInfo.getExerciseTitle());
         update.setExerciseDescription(exerciseInfo.getExerciseDescription());
         update.setExerciseDuration(exerciseInfo.getExerciseDuration());
+        update.setTargetMuscle(exerciseInfo.getTargetMuscle());
+        update.setNumberOfSets(exerciseInfo.getNumberOfSets());
         update.setNumberOfReps(exerciseInfo.getNumberOfReps());
         return this.repo.save(update);
     }
