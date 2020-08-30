@@ -1,5 +1,7 @@
 package com.qa.exerciseapp.domain;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,7 @@ public class ExerciseInfo {
     private Long exerciseInfoId;
 
     @Column
+    @NonNull
     private String exerciseTitle;
 
     @Column
@@ -22,6 +25,7 @@ public class ExerciseInfo {
     private int exerciseDuration;
 
     @Column
+    @NonNull
     private String targetMuscle;
 
     @Column
@@ -48,24 +52,14 @@ public class ExerciseInfo {
         this.numberOfReps = numberOfReps;
     }
 
+    public void setId(Long id) { this.exerciseInfoId = id; }
+
     public String getTargetMuscle() {
         return targetMuscle;
     }
 
     public void setTargetMuscle(String targetMuscle) {
         this.targetMuscle = targetMuscle;
-    }
-
-    public int getNumberOfSets() {
-        return numberOfSets;
-    }
-
-    public void setNumberOfSets(int numberOfSets) {
-        this.numberOfSets = numberOfSets;
-    }
-
-    public void setId(Long id) {
-        this.exerciseInfoId = id;
     }
 
     public String getExerciseTitle() {
@@ -98,6 +92,14 @@ public class ExerciseInfo {
 
     public void setNumberOfReps(int numberOfReps) {
         this.numberOfReps = numberOfReps;
+    }
+
+    public int getNumberOfSets() {
+        return numberOfSets;
+    }
+
+    public void setNumberOfSets(int numberOfSets) {
+        this.numberOfSets = numberOfSets;
     }
 
 }
