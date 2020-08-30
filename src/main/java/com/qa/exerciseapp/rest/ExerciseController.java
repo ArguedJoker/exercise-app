@@ -17,23 +17,28 @@ public class ExerciseController {
         this.exerciseService = exerciseService;
     }
 
-    @GetMapping("/Activities")
+    @GetMapping("/Exercises")
     public List<ExerciseInfo> getAllActivities() {
-        return this.exerciseService.readAllActivities();
+        return this.exerciseService.readAllExercises();
     }
 
-    @PostMapping("/createActivities")
-    public ExerciseInfo createActivity(@RequestBody ExerciseInfo exerciseInfo) {
-        return this.exerciseService.createActivity(exerciseInfo);
+    @PostMapping("/createExercise")
+    public ExerciseInfo createExercise(@RequestBody ExerciseInfo exerciseInfo) {
+        return this.exerciseService.createExercise(exerciseInfo);
     }
 
-    @DeleteMapping("/deleteActivity/{id}")
-    public Boolean deleteActivity(@PathVariable Long id) {
-        return this.exerciseService.deleteActivityById(id);
+    @DeleteMapping("/deleteExercise/{id}")
+    public Boolean deleteExercise(@PathVariable Long id) {
+        return this.exerciseService.deleteExerciseById(id);
     }
 
-    @GetMapping("/getActivityById/{id}")
+    @GetMapping("/getExerciseById/{id}")
     public ExerciseInfo getExerciseById(@PathVariable Long id) {
-        return this.exerciseService.findActivityById(id);
+        return this.exerciseService.findExerciseById(id);
+    }
+
+    @PutMapping("/updateExercise/{id}")
+    public ExerciseInfo updateActivity(@PathVariable Long id, @RequestBody ExerciseInfo exercise) {
+        return this.exerciseService.updateExercise(id, exercise);
     }
 }
