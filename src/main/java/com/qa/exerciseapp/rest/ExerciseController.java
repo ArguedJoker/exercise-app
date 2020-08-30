@@ -38,7 +38,7 @@ public class ExerciseController {
     }
 
     @PutMapping("/updateExercise/{id}")
-    public ExerciseInfo updateActivity(@PathVariable Long id, @RequestBody ExerciseInfo exercise) {
+    public ExerciseInfo updateExercise(@PathVariable Long id, @RequestBody ExerciseInfo exercise) {
         return this.exerciseService.updateExercise(id, exercise);
     }
 }
