@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PumpitService {
+public class ExerciseService {
 
     private final PumpitRepository repo;
 
     @Autowired
-    public PumpitService(PumpitRepository repo) {
+    public ExerciseService(PumpitRepository repo) {
         this.repo = repo;
     }
 
