@@ -18,20 +18,18 @@ public class ExerciseService {
         this.repo = repo;
     }
 
-    public List<ExerciseInfo> readAllActivities() {
+    public List<ExerciseInfo> readAllExercises() {
         return this.repo.findAll();
     }
 
-    public ExerciseInfo createActivity(ExerciseInfo activity) {
+    public ExerciseInfo createExercise(ExerciseInfo activity) {
         return this.repo.save(activity);
     }
 
-    public ExerciseInfo findActivityById(Long id) {
-        return this.repo.findById(id).orElseThrow(ActivityNotFoundException::new);
-    }
+    public ExerciseInfo findExerciseById(Long id) { return this.repo.findById(id).orElseThrow(ActivityNotFoundException::new); }
 
-    public ExerciseInfo updateActivity(Long id, ExerciseInfo exerciseInfo) {
-        ExerciseInfo update = findActivityById(id);
+    public ExerciseInfo updateExercise(Long id, ExerciseInfo exerciseInfo) {
+        ExerciseInfo update = findExerciseById(id);
         update.setExerciseTitle(exerciseInfo.getExerciseTitle());
         update.setExerciseDescription(exerciseInfo.getExerciseDescription());
         update.setExerciseDuration(exerciseInfo.getExerciseDuration());
@@ -41,12 +39,11 @@ public class ExerciseService {
         return this.repo.save(update);
     }
 
-    public boolean deleteActivityById(Long id) {
+    public boolean deleteExerciseById(Long id) {
         if(!this.repo.existsById(id)) {
             throw new ActivityNotFoundException();
         }
         this.repo.deleteById(id);
         return this.repo.existsById(id);
     }
-
 }
