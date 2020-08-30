@@ -2,7 +2,7 @@ package com.qa.exerciseapp.service;
 
 import com.qa.exerciseapp.domain.ExerciseInfo;
 import com.qa.exerciseapp.exceptions.ActivityNotFoundException;
-import com.qa.exerciseapp.repo.PumpitRepository;
+import com.qa.exerciseapp.repo.ExerciseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import java.util.List;
 @Service
 public class ExerciseService {
 
-    private final PumpitRepository repo;
+    private final ExerciseRepository repo;
 
     @Autowired
-    public ExerciseService(PumpitRepository repo) {
+    public ExerciseService(ExerciseRepository repo) {
         this.repo = repo;
     }
 
