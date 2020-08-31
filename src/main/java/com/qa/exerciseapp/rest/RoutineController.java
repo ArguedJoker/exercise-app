@@ -13,10 +13,10 @@ public class RoutineController {
     private final RoutineService routineService;
 
     @Autowired
-    public RoutineController(RoutineService routineService) {this.routineService = routineService;}
+    public RoutineController(RoutineService routineService) { this.routineService = routineService; }
 
     @GetMapping("/Routines")
-    public List<Routine> getAllRoutines() {return this.routineService.readAllRoutines(); }
+    public List<Routine> getAllRoutines() { return this.routineService.readAllRoutines(); }
 
     @PostMapping("/createRoutine")
     public Routine createRoutine(@RequestBody Routine routine) {
