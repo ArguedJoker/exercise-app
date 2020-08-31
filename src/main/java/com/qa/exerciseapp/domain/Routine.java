@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Routine {
 
     @Id
+    @GeneratedValue
     private Long routineId;
 
     @Column
