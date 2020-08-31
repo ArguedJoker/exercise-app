@@ -17,7 +17,7 @@ public class UserService {
     public UserService(UserRepository repo) { this.userRepository = repo; }
 
     public List<User> readAllUsers() {
-        return this.userRepository.readAllUsers();
+        return this.userRepository.findAll();
     }
 
     public User createUser(User user) {
@@ -38,4 +38,13 @@ public class UserService {
         update.setWeight(user.getWeight());
         return this.userRepository.save(update);
     }
+
+    public boolean deleteUserById(Long id) {
+        if(!this.userRepository.deleteById(id)) {
+            throw new UserNotFoundException();
+        }
+        this.userRepository.deleteById(id);
+        return this.userRepository.existsById(id);
+    }
 }
+
