@@ -40,7 +40,7 @@ public class UserService {
     }
 
     public boolean deleteUserById(Long id) {
-        if(!this.userRepository.deleteById(id)) {
+        if(this.userRepository.existsById(id)) {
             throw new UserNotFoundException();
         }
         this.userRepository.deleteById(id);
