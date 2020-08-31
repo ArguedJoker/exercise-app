@@ -6,6 +6,9 @@ import javax.persistence.*;
 public class Routine {
 
     @Id
+    private Long routineId;
+
+    @Column
     private String routineName;
 
     @Column
@@ -17,10 +20,19 @@ public class Routine {
 
 public Routine() {}
 
-    public Routine(String routineName, Long userId, Long exerciseInfoId) {
+    public Routine(Long routineId, String routineName, Long userId, Long exerciseInfoId) {
+        this.routineId = routineId;
         this.routineName = routineName;
-        this. userId = userId;
-        this. exerciseInfoId = exerciseInfoId;
+        this.userId = userId;
+        this.exerciseInfoId = exerciseInfoId;
+    }
+
+    public Long getRoutineId() {
+        return routineId;
+    }
+
+    public void setRoutineId(Long routineId) {
+        this.routineId = routineId;
     }
 
     public String getRoutineName() {
@@ -46,5 +58,7 @@ public Routine() {}
     public void setExerciseInfoId(Long exerciseInfoId) {
         this.exerciseInfoId = exerciseInfoId;
     }
+
+
 }
 
