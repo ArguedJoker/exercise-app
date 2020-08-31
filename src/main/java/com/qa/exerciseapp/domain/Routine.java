@@ -20,8 +20,8 @@ public class Routine {
 
 public Routine() {}
 
-    public Routine(Long routineId, String routineName, Long userId, Long exerciseInfoId) {
-        this.routineId = routineId;
+    public Routine(String routineName, Long userId, Long exerciseInfoId) {
+
         this.routineName = routineName;
         this.userId = userId;
         this.exerciseInfoId = exerciseInfoId;

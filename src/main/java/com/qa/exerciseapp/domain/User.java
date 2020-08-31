@@ -43,8 +43,7 @@ public class User {
 
     }
 
-    public User(Long userId, String firstName, String lastName, Float weight, Float height, String email, String password) {
-        this.userId = userId;
+    public User(String firstName, String lastName, Float weight, Float height, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.weight = weight;
