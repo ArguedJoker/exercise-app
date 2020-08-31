@@ -1,5 +1,8 @@
 package com.qa.exerciseapp.domain;
 
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,21 +16,27 @@ public class User {
     private Long userId;
 
     @Column
+    @NonNull
     private String firstName;
 
     @Column
+    @NonNull
     private String lastName;
 
     @Column
+    @Nullable
     private Float weight;
 
     @Column
+    @Nullable
     private Float height;
 
     @Column
+    @NonNull
     private String email;
 
     @Column
+    @NonNull
     private String password;
 
     public User() {
