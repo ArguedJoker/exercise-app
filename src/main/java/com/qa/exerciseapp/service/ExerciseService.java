@@ -1,7 +1,7 @@
 package com.qa.exerciseapp.service;
 
 import com.qa.exerciseapp.domain.ExerciseInfo;
-import com.qa.exerciseapp.exceptions.ActivityNotFoundException;
+import com.qa.exerciseapp.exceptions.ExerciseNotFoundException;
 import com.qa.exerciseapp.repo.ExerciseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,22 +11,24 @@ import java.util.List;
 @Service
 public class ExerciseService {
 
-    private final ExerciseRepository repo;
+    private final ExerciseRepository exerciseRepository;
 
     @Autowired
     public ExerciseService(ExerciseRepository repo) {
-        this.repo = repo;
+        this.exerciseRepository = repo;
     }
 
     public List<ExerciseInfo> readAllExercises() {
-        return this.repo.findAll();
+        return this.exerciseRepository.findAll();
     }
 
-    public ExerciseInfo createExercise(ExerciseInfo activity) {
-        return this.repo.save(activity);
+    public ExerciseInfo createExercise(ExerciseInfo exercise) {
+        return this.exerciseRepository.save(exercise);
     }
 
-    public ExerciseInfo findExerciseById(Long id) { return this.repo.findById(id).orElseThrow(ActivityNotFoundException::new); }
+    public ExerciseInfo findExerciseById(Long id) {
+        return this.exerciseRepository.findById(id).orElseThrow(ExerciseNotFoundException::new);
+    }
 
     public ExerciseInfo updateExercise(Long id, ExerciseInfo exerciseInfo) {
         ExerciseInfo update = findExerciseById(id);
@@ -36,14 +38,14 @@ public class ExerciseService {
         update.setTargetMuscle(exerciseInfo.getTargetMuscle());
         update.setNumberOfSets(exerciseInfo.getNumberOfSets());
         update.setNumberOfReps(exerciseInfo.getNumberOfReps());
-        return this.repo.save(update);
+        return this.exerciseRepository.save(update);
     }
 
     public boolean deleteExerciseById(Long id) {
-        if(!this.repo.existsById(id)) {
-            throw new ActivityNotFoundException();
+        if(!this.exerciseRepository.existsById(id)) {
+            throw new ExerciseNotFoundException();
         }
-        this.repo.deleteById(id);
-        return this.repo.existsById(id);
+        this.exerciseRepository.deleteById(id);
+        return this.exerciseRepository.existsById(id);
     }
 }
