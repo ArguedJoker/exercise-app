@@ -18,7 +18,7 @@ public class ExerciseController {
     }
 
     @GetMapping("/Exercises")
-    public List<ExerciseInfo> getAllActivities() {
+    public List<ExerciseInfo> getAllExercises() {
         return this.exerciseService.readAllExercises();
     }
 
