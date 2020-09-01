@@ -39,6 +39,10 @@ public class User {
     @NonNull
     private String password;
 
+    public Long getUserId() {
+        return userId;
+    }
+
     public User() {
 
     }

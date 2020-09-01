@@ -18,6 +18,10 @@ public class Routine {
     @Column
     private Long exerciseInfoId;
 
+    public Long getRoutineId() {
+        return routineId;
+    }
+
 
 public Routine() {}
 
@@ -26,10 +30,6 @@ public Routine() {}
         this.routineName = routineName;
         this.userId = userId;
         this.exerciseInfoId = exerciseInfoId;
-    }
-
-    public Long getRoutineId() {
-        return routineId;
     }
 
     public void setRoutineId(Long routineId) {
