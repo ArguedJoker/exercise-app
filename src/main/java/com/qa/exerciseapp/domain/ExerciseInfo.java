@@ -1,7 +1,5 @@
 package com.qa.exerciseapp.domain;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +9,7 @@ public class ExerciseInfo {
     @GeneratedValue
     private Long exerciseInfoId;
 
-    @Column
-    @NonNull
+    @Column (nullable = false, unique = true )
     private String exerciseTitle;
 
     @Column
@@ -21,8 +18,7 @@ public class ExerciseInfo {
     @Column
     private int exerciseDuration;
 
-    @Column
-    @NonNull
+    @Column (nullable = false)
     private String targetMuscle;
 
     @Column
@@ -30,10 +26,6 @@ public class ExerciseInfo {
 
     @Column
     private int numberOfReps;
-
-    public Long getId() {
-        return exerciseInfoId;
-    }
 
     @ManyToOne(targetEntity = User.class)
     private User user;
@@ -45,14 +37,18 @@ public class ExerciseInfo {
 
     }
 
-    public ExerciseInfo(Long exerciseInfoId, String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
-        this.exerciseInfoId = exerciseInfoId;
+    public ExerciseInfo(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+
         this.exerciseTitle = exerciseTitle;
         this.exerciseDescription = exerciseDescription;
         this.exerciseDuration = exerciseDuration;
         this.targetMuscle = targetMuscle;
         this.numberOfSets = numberOfSets;
         this.numberOfReps = numberOfReps;
+    }
+
+    public Long getId() {
+        return exerciseInfoId;
     }
 
     public void setId(Long id) { this.exerciseInfoId = id; }
