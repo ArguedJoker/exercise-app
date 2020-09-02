@@ -1,8 +1,11 @@
 package com.qa.exerciseapp.rest;
 
 import com.qa.exerciseapp.domain.ExerciseInfo;
+import com.qa.exerciseapp.dto.ExerciseInfoDTO;
 import com.qa.exerciseapp.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,13 +21,13 @@ public class ExerciseController {
     }
 
     @GetMapping("/Exercises")
-    public List<ExerciseInfo> getAllExercises() {
-        return this.exerciseService.readAllExercises();
+    public ResponseEntity<List<ExerciseInfoDTO>> getAllExercises() {
+        return ResponseEntity.ok(this.exerciseService.readAllExercises());
     }
 
     @PostMapping("/createExercise")
-    public ExerciseInfo createExercise(@RequestBody ExerciseInfo exerciseInfo) {
-        return this.exerciseService.createExercise(exerciseInfo);
+    public ResponseEntity<ExerciseInfoDTO> createExercise(@RequestBody ExerciseInfo exerciseInfo) {
+        return new ResponseEntity<ExerciseInfoDTO>(this.exerciseService.createExercise(exerciseInfo), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteExercise/{id}")
@@ -33,12 +36,12 @@ public class ExerciseController {
     }
 
     @GetMapping("/getExerciseById/{id}")
-    public ExerciseInfo getExerciseById(@PathVariable Long id) {
-        return this.exerciseService.findExerciseById(id);
+    public ResponseEntity<ExerciseInfoDTO> getExerciseById(@PathVariable Long id) {
+        return ResponseEntity.ok(this.exerciseService.findExerciseById(id));
     }
 
     @PutMapping("/updateExercise/{id}")
-    public ExerciseInfo updateExercise(@PathVariable Long id, @RequestBody ExerciseInfo exercise) {
-        return this.exerciseService.updateExercise(id, exercise);
+    public ResponseEntity<ExerciseInfoDTO> updateExercise(@PathVariable Long id, @RequestBody ExerciseInfo exercise) {
+        return ResponseEntity.ok(this.exerciseService.updateExercise(id, exercise));
     }
 }
