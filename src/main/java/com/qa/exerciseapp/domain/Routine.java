@@ -43,6 +43,8 @@ public Routine() {}
         this.routineName = routineName;
     }
 
+    public List<ExerciseInfo> getExerciseInfo() { return exerciseInfo; }
+
     public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
         this.exerciseInfo = exerciseInfo;
     }
