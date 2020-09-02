@@ -2,10 +2,7 @@ package com.qa.exerciseapp.domain;
 
 import org.springframework.lang.NonNull;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ExerciseInfo {
@@ -37,6 +34,12 @@ public class ExerciseInfo {
     public Long getId() {
         return exerciseInfoId;
     }
+
+    @ManyToOne(targetEntity = User.class)
+    private User user;
+
+    @ManyToOne(targetEntity = Routine.class)
+    private Routine routine;
 
     public ExerciseInfo() {
 
@@ -102,6 +105,29 @@ public class ExerciseInfo {
         this.numberOfSets = numberOfSets;
     }
 
+    public Long getExerciseInfoId() {
+        return exerciseInfoId;
+    }
+
+    public void setExerciseInfoId(Long exerciseInfoId) {
+        this.exerciseInfoId = exerciseInfoId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
+    }
 }
 
 

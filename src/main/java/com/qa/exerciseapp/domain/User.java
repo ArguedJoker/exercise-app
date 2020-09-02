@@ -3,10 +3,9 @@ package com.qa.exerciseapp.domain;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
@@ -42,6 +41,12 @@ public class User {
     public Long getUserId() {
         return userId;
     }
+
+    @OneToMany(mappedBy = "ExerciseInfo", fetch = FetchType.LAZY)
+    private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
+
+    @OneToMany(mappedBy = "Routine", fetch = FetchType.LAZY)
+    private List<Routine> routine = new ArrayList<>();
 
     public User() {
 
@@ -104,5 +109,25 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public List<ExerciseInfo> getExerciseInfo() {
+        return exerciseInfo;
+    }
+
+    public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
+        this.exerciseInfo = exerciseInfo;
+    }
+
+    public List<Routine> getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(List<Routine> routine) {
+        this.routine = routine;
     }
 }
