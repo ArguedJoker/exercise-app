@@ -27,7 +27,7 @@ public class ExerciseController {
 
     @PostMapping("/createExercise")
     public ResponseEntity<ExerciseInfoDTO> createExercise(@RequestBody ExerciseInfo exerciseInfo) {
-        return new ResponseEntity<ExerciseInfoDTO>(this.exerciseService.createExercise(exerciseInfo), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.exerciseService.createExercise(exerciseInfo), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteExercise/{id}")

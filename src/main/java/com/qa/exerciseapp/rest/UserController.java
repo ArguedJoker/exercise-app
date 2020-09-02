@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping("/createUser")
     public ResponseEntity<UserDTO> createUser(@RequestBody User user) {
-        return new ResponseEntity<UserDTO>(this.userService.createUser(user), HttpStatus.CREATED); }
+        return new ResponseEntity<>(this.userService.createUser(user), HttpStatus.CREATED); }
 
     @DeleteMapping("/deleteUser/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {

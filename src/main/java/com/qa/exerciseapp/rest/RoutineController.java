@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.Response;
 import java.util.List;
 
 @RestController
@@ -26,7 +25,7 @@ public class RoutineController {
 
     @PostMapping("/createRoutine")
     public ResponseEntity<RoutineDTO> createRoutine(@RequestBody Routine routine) {
-        return new ResponseEntity<RoutineDTO>(this.routineService.createRoutine(routine), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.routineService.createRoutine(routine), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteRoutine/{id}")
@@ -42,7 +41,7 @@ public class RoutineController {
     }
 
     @PutMapping("/updateRoutine/{id}")
-    public Response<RoutineDTO> updateRoutine(@PathVariable Long id, @RequestBody Routine routine) {
-        return (Response<RoutineDTO>) ResponseEntity.ok(this.routineService.updateRoutine(id, routine));
+    public ResponseEntity<RoutineDTO> updateRoutine(@PathVariable Long id, @RequestBody Routine routine) {
+        return ResponseEntity.ok(this.routineService.updateRoutine(id, routine));
     }
 }
