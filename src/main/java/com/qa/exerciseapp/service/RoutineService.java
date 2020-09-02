@@ -1,43 +1,52 @@
 package com.qa.exerciseapp.service;
 
 import com.qa.exerciseapp.domain.Routine;
-import com.qa.exerciseapp.exceptions.ExerciseNotFoundException;
+import com.qa.exerciseapp.dto.RoutineDTO;
 import com.qa.exerciseapp.exceptions.RoutineNotFoundException;
 import com.qa.exerciseapp.repo.RoutineRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RoutineService {
 
     private final RoutineRepository routineRepository;
+    private final ModelMapper mapper;
 
     @Autowired
-    public RoutineService(RoutineRepository repo) { this.routineRepository = repo; }
-
-    public List<Routine> readAllRoutines() {
-        return this.routineRepository.findAll();
+    public RoutineService(RoutineRepository repo, ModelMapper mapper) {
+        this.routineRepository = repo;
+        this.mapper = mapper;
     }
 
-    public Routine createRoutine(Routine routine) {
-        return this.routineRepository.save(routine);
+    private RoutineDTO mapToDTO(Routine routine) {
+        return this.mapper.map(routine, RoutineDTO.class);
     }
 
-    public Routine findRoutineById(Long id) {
-        return this.routineRepository.findById(id).orElseThrow(ExerciseNotFoundException::new);
+    public List<RoutineDTO> readAllRoutines() {
+
+        return this.routineRepository.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public Routine updateRoutine(Long id, Routine routine) {
-        Routine update = findRoutineById(id);
+    public RoutineDTO createRoutine(Routine routine) {
+        return this.mapToDTO(this.routineRepository.save(routine));
+    }
+
+    public RoutineDTO findRoutineById(Long id) {
+        return this.mapToDTO(this.routineRepository.findById(id).orElseThrow(RoutineNotFoundException::new));
+    }
+
+    public RoutineDTO updateRoutine(Long id, Routine routine) {
+        Routine update = this.routineRepository.findById(id).orElseThrow(RoutineNotFoundException::new);
         update.setRoutineName(routine.getRoutineName());
-        update.setUserId(routine.getUserId());
-        update.setExerciseInfoId(routine.getExerciseInfoId());
-        return this.routineRepository.save(update);
+        return this.mapToDTO(this.routineRepository.save(routine));
     }
 
-    public boolean deleteRoutineById(Long id) {
+    public Boolean deleteRoutineById(Long id) {
         if(!this.routineRepository.existsById(id)) {
             throw new RoutineNotFoundException();
         }
