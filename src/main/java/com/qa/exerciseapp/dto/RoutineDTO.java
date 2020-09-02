@@ -1,20 +1,19 @@
 package com.qa.exerciseapp.dto;
 
+import com.qa.exerciseapp.domain.ExerciseInfo;
+import com.qa.exerciseapp.domain.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RoutineDTO {
 
     private Long routineId;
     private String routineName;
-    private Long userId;
-    private Long exerciseInfoId;
+    private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
+    private User user;
 
     public RoutineDTO() {
-
-    }
-
-    public RoutineDTO(String routineName, Long userId, Long exerciseInfoId) {
-        this.routineName = routineName;
-        this.userId = userId;
-        this.exerciseInfoId = exerciseInfoId;
     }
 
     public Long getRoutineId() {
@@ -33,19 +32,20 @@ public class RoutineDTO {
         this.routineName = routineName;
     }
 
-    public Long getUserId() {
-        return userId;
+
+    public List<ExerciseInfo> getExerciseInfo() {
+        return exerciseInfo;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
+        this.exerciseInfo = exerciseInfo;
     }
 
-    public Long getExerciseInfoId() {
-        return exerciseInfoId;
+    public User getUser() {
+        return user;
     }
 
-    public void setExerciseInfoId(Long exerciseInfoId) {
-        this.exerciseInfoId = exerciseInfoId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

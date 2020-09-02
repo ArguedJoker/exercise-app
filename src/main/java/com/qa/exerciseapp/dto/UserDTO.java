@@ -1,5 +1,11 @@
 package com.qa.exerciseapp.dto;
 
+import com.qa.exerciseapp.domain.ExerciseInfo;
+import com.qa.exerciseapp.domain.Routine;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDTO {
     private Long userId;
     private String firstName;
@@ -8,19 +14,14 @@ public class UserDTO {
     private Float height;
     private String email;
     private String password;
+    private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
+    private List<Routine> routine = new ArrayList<>();
+
 
     public UserDTO() {
 
     }
 
-    public UserDTO(String firstName, String lastName, Float weight, Float height, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.weight = weight;
-        this.height = height;
-        this.email = email;
-        this.password = password;
-    }
 
     public Long getUserId() {
         return userId;
@@ -76,5 +77,21 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<ExerciseInfo> getExerciseInfo() {
+        return exerciseInfo;
+    }
+
+    public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
+        this.exerciseInfo = exerciseInfo;
+    }
+
+    public List<Routine> getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(List<Routine> routine) {
+        this.routine = routine;
     }
 }
