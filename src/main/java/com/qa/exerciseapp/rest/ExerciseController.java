@@ -31,8 +31,11 @@ public class ExerciseController {
     }
 
     @DeleteMapping("/deleteExercise/{id}")
-    public Boolean deleteExercise(@PathVariable Long id) {
-        return this.exerciseService.deleteExerciseById(id);
+    public ResponseEntity<?> deleteExercise(@PathVariable Long id) {
+
+        return this.exerciseService.deleteExerciseById(id)
+                ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+                : ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getExerciseById/{id}")
