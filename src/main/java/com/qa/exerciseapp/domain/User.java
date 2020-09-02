@@ -1,5 +1,6 @@
 package com.qa.exerciseapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
@@ -8,57 +9,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitilizer", "handler", "notes"})
 public class User {
 
     @Id
     @GeneratedValue
     private Long userId;
 
-    @Column
-    @NonNull
+    @Column (nullable = false)
     private String firstName;
 
-    @Column
-    @NonNull
+    @Column (nullable = false)
     private String lastName;
 
-    @Column
-    @Nullable
+    @Column (nullable = false)
     private Float weight;
 
-    @Column
-    @Nullable
+    @Column (nullable = false)
     private Float height;
 
-    @Column
-    @NonNull
+    @Column (nullable = false, unique = true)
     private String email;
 
-    @Column
-    @NonNull
+    @Column (nullable = false, unique = true)
     private String password;
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    @OneToMany(mappedBy = "ExerciseInfo", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "exerciseInfoId", fetch = FetchType.EAGER)
     private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Routine", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "routineId", fetch = FetchType.EAGER)
     private List<Routine> routine = new ArrayList<>();
 
     public User() {
 
     }
 
-    public User(String firstName, String lastName, Float weight, Float height, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.weight = weight;
-        this.height = height;
-        this.email = email;
-        this.password = password;
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public void setId(Long id) {this.userId = id;}
@@ -109,10 +100,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public List<ExerciseInfo> getExerciseInfo() {
