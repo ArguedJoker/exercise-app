@@ -1,15 +1,9 @@
 package com.qa.exerciseapp.domain;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitilizer", "handler", "notes"})
 public class User {
 
     @Id
@@ -44,12 +38,8 @@ public class User {
 
     }
 
-    public Long getUserId() {
+    public Long getId() {
         return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public void setId(Long id) {this.userId = id;}
