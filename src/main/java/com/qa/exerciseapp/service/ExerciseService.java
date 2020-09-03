@@ -33,8 +33,8 @@ public class ExerciseService {
         return this.exerciseRepository.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public ExerciseInfoDTO createExercise(ExerciseInfo exercise) {
-        return this.mapToDTO(this.exerciseRepository.save(exercise));
+    public ExerciseInfoDTO createExercise(ExerciseInfo exerciseInfo) {
+        return this.mapToDTO(this.exerciseRepository.save(exerciseInfo));
     }
 
     public ExerciseInfoDTO findExerciseById(Long id) {
