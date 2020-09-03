@@ -1,9 +1,12 @@
 package com.qa.exerciseapp.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "Routine"})
 public class User {
 
     @Id
@@ -28,11 +31,8 @@ public class User {
     @Column (nullable = false)
     private String password;
 
-  //  @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-   // private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
-
-   // @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-   // private List<Routine> routine = new ArrayList<>();
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<Routine> routine = new ArrayList<>();
 
     public User() {
 
@@ -92,12 +92,12 @@ public class User {
         this.password = password;
     }
 
-   /* public List<ExerciseInfo> getExerciseInfo() {
-        return exerciseInfo;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
-        this.exerciseInfo = exerciseInfo;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public List<Routine> getRoutine() {
@@ -106,5 +106,5 @@ public class User {
 
     public void setRoutine(List<Routine> routine) {
         this.routine = routine;
-    } */
+    }
 }

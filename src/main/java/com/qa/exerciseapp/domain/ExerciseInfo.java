@@ -26,18 +26,18 @@ public class ExerciseInfo {
     @Column
     private int numberOfReps;
 
-    /*@ManyToOne(targetEntity = User.class)
-    private User user;
-
     @ManyToOne(targetEntity = Routine.class)
     private Routine routine;
-*/
-    public ExerciseInfo() {
 
-    }
+    public ExerciseInfo() {}
 
-    public Long getId() {
-        return exerciseInfoId;
+    public ExerciseInfo(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+        this.exerciseTitle = exerciseTitle;
+        this.exerciseDescription = exerciseDescription;
+        this.exerciseDuration = exerciseDuration;
+        this.targetMuscle = targetMuscle;
+        this.numberOfSets = numberOfSets;
+        this.numberOfReps = numberOfReps;
     }
 
     public void setId(Long id) { this.exerciseInfoId = id; }
@@ -90,12 +90,12 @@ public class ExerciseInfo {
         this.numberOfReps = numberOfReps;
     }
 
-   /* public User getUser() {
-        return user;
+    public Long getExerciseInfoId() {
+        return exerciseInfoId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setExerciseInfoId(Long exerciseInfoId) {
+        this.exerciseInfoId = exerciseInfoId;
     }
 
     public Routine getRoutine() {
@@ -104,7 +104,7 @@ public class ExerciseInfo {
 
     public void setRoutine(Routine routine) {
         this.routine = routine;
-    }*/
+    }
 }
 
 
