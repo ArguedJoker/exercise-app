@@ -1,5 +1,4 @@
 package com.qa.exerciseapp.domain;
-
 import javax.persistence.*;
 
 @Entity
@@ -37,21 +36,35 @@ public class ExerciseInfo {
 
     }
 
-    public ExerciseInfo(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
-
-        this.exerciseTitle = exerciseTitle;
-        this.exerciseDescription = exerciseDescription;
-        this.exerciseDuration = exerciseDuration;
-        this.targetMuscle = targetMuscle;
-        this.numberOfSets = numberOfSets;
-        this.numberOfReps = numberOfReps;
-    }
-
     public Long getId() {
         return exerciseInfoId;
     }
 
     public void setId(Long id) { this.exerciseInfoId = id; }
+
+    public String getExerciseTitle() {
+        return exerciseTitle;
+    }
+
+    public void setExerciseTitle(String exerciseTitle) {
+        this.exerciseTitle = exerciseTitle;
+    }
+
+    public String getExerciseDescription() {
+        return exerciseDescription;
+    }
+
+    public void setExerciseDescription(String exerciseDescription) {
+        this.exerciseDescription = exerciseDescription;
+    }
+
+    public int getExerciseDuration() {
+        return exerciseDuration;
+    }
+
+    public void setExerciseDuration(int exerciseDuration) {
+        this.exerciseDuration = exerciseDuration;
+    }
 
     public String getTargetMuscle() {
         return targetMuscle;
@@ -59,38 +72,6 @@ public class ExerciseInfo {
 
     public void setTargetMuscle(String targetMuscle) {
         this.targetMuscle = targetMuscle;
-    }
-
-    public String getExerciseTitle() {
-        return exerciseTitle;
-    }
-
-    public void setExerciseTitle(String activityTitle) {
-        this.exerciseTitle = activityTitle;
-    }
-
-    public String getExerciseDescription() {
-        return exerciseDescription;
-    }
-
-    public void setExerciseDescription(String activityDescription) {
-        this.exerciseDescription = activityDescription;
-    }
-
-    public int getExerciseDuration() {
-        return exerciseDuration;
-    }
-
-    public void setExerciseDuration(int activityDuration) {
-        this.exerciseDuration = activityDuration;
-    }
-
-    public int getNumberOfReps() {
-        return numberOfReps;
-    }
-
-    public void setNumberOfReps(int numberOfReps) {
-        this.numberOfReps = numberOfReps;
     }
 
     public int getNumberOfSets() {
@@ -101,12 +82,12 @@ public class ExerciseInfo {
         this.numberOfSets = numberOfSets;
     }
 
-    public Long getExerciseInfoId() {
-        return exerciseInfoId;
+    public int getNumberOfReps() {
+        return numberOfReps;
     }
 
-    public void setExerciseInfoId(Long exerciseInfoId) {
-        this.exerciseInfoId = exerciseInfoId;
+    public void setNumberOfReps(int numberOfReps) {
+        this.numberOfReps = numberOfReps;
     }
 
     public User getUser() {
