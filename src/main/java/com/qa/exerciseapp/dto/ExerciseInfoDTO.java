@@ -12,19 +12,72 @@ public class ExerciseInfoDTO {
     private String targetMuscle;
     private int numberOfSets;
     private int numberOfReps;
-    private User user;
-    private Routine routine;
+   // private User user;
+    // private Routine routine;
 
     public ExerciseInfoDTO() {
 
     }
 
+    public ExerciseInfoDTO(Long exerciseInfoId, String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {}
+
     public Long getExerciseInfoId() {
         return exerciseInfoId;
     }
 
+    public void setExerciseInfoId(Long exerciseInfoId) {
+        this.exerciseInfoId = exerciseInfoId;
+    }
 
-    public User getUser() {
+    public String getExerciseTitle() {
+        return exerciseTitle;
+    }
+
+    public void setExerciseTitle(String exerciseTitle) {
+        this.exerciseTitle = exerciseTitle;
+    }
+
+    public String getExerciseDescription() {
+        return exerciseDescription;
+    }
+
+    public void setExerciseDescription(String exerciseDescription) {
+        this.exerciseDescription = exerciseDescription;
+    }
+
+    public int getExerciseDuration() {
+        return exerciseDuration;
+    }
+
+    public void setExerciseDuration(int exerciseDuration) {
+        this.exerciseDuration = exerciseDuration;
+    }
+
+    public String getTargetMuscle() {
+        return targetMuscle;
+    }
+
+    public void setTargetMuscle(String targetMuscle) {
+        this.targetMuscle = targetMuscle;
+    }
+
+    public int getNumberOfSets() {
+        return numberOfSets;
+    }
+
+    public void setNumberOfSets(int numberOfSets) {
+        this.numberOfSets = numberOfSets;
+    }
+
+    public int getNumberOfReps() {
+        return numberOfReps;
+    }
+
+    public void setNumberOfReps(int numberOfReps) {
+        this.numberOfReps = numberOfReps;
+    }
+
+/* public User getUser() {
         return user;
     }
 
@@ -39,4 +92,6 @@ public class ExerciseInfoDTO {
     public void setRoutine(Routine routine) {
         this.routine = routine;
     }
+
+    */
 }
