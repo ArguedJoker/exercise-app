@@ -15,10 +15,6 @@ public class ExerciseInfoDTO {
    // private User user;
     // private Routine routine;
 
-    public ExerciseInfoDTO() {
-
-    }
-
     public ExerciseInfoDTO(Long exerciseInfoId, String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {}
 
     public Long getExerciseInfoId() {
@@ -27,6 +23,10 @@ public class ExerciseInfoDTO {
 
     public void setExerciseInfoId(Long exerciseInfoId) {
         this.exerciseInfoId = exerciseInfoId;
+    }
+
+    public ExerciseInfoDTO() {
+
     }
 
     public String getExerciseTitle() {
@@ -76,22 +76,4 @@ public class ExerciseInfoDTO {
     public void setNumberOfReps(int numberOfReps) {
         this.numberOfReps = numberOfReps;
     }
-
-/* public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Routine getRoutine() {
-        return routine;
-    }
-
-    public void setRoutine(Routine routine) {
-        this.routine = routine;
-    }
-
-    */
 }

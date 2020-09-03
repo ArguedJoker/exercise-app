@@ -1,7 +1,4 @@
 package com.qa.exerciseapp.domain;
-
-import org.springframework.lang.NonNull;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,26 +10,21 @@ public class Routine {
     @GeneratedValue
     private Long routineId;
 
-    @Column (nullable = false, unique = true)
+    @Column (nullable = false)
     private String routineName;
 
-    @OneToMany(mappedBy = "exerciseInfoId", fetch = FetchType.EAGER)
+  /*  @OneToMany(mappedBy = "exerciseInfoId", fetch = FetchType.EAGER)
     private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
 
     @ManyToOne(targetEntity = User.class)
     private User user;
-
+*/
     public Routine() {}
-
-    public Routine(String routineName, Long routineId) {
-        this.routineName = routineName;
-        this.routineId = routineId;
-    }
 
     public Long getRoutineId() { return routineId; }
 
-    public void setRoutineId(Long id) {
-        this.routineId = id;
+    public void setRoutineId(Long routineId) {
+        this.routineId = routineId;
     }
 
     public String getRoutineName() {
@@ -43,7 +35,7 @@ public class Routine {
         this.routineName = routineName;
     }
 
-    public List<ExerciseInfo> getExerciseInfo() { return exerciseInfo; }
+    /*public List<ExerciseInfo> getExerciseInfo() { return exerciseInfo; }
 
     public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
         this.exerciseInfo = exerciseInfo;
@@ -55,6 +47,6 @@ public class Routine {
 
     public void setUser(User user) {
         this.user = user;
-    }
+    }*/
 }
 

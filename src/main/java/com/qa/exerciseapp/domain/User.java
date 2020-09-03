@@ -16,23 +16,23 @@ public class User {
     @Column (nullable = false)
     private String lastName;
 
-    @Column (nullable = false)
+    @Column
     private Float weight;
 
-    @Column (nullable = false)
+    @Column
     private Float height;
 
-    @Column (nullable = false, unique = true)
+    @Column (nullable = false)
     private String email;
 
-    @Column (nullable = false, unique = true)
+    @Column (nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "exerciseInfoId", fetch = FetchType.EAGER)
-    private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
+  //  @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+   // private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
 
-    @OneToMany(mappedBy = "routineId", fetch = FetchType.EAGER)
-    private List<Routine> routine = new ArrayList<>();
+   // @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+   // private List<Routine> routine = new ArrayList<>();
 
     public User() {
 
@@ -92,7 +92,7 @@ public class User {
         this.password = password;
     }
 
-    public List<ExerciseInfo> getExerciseInfo() {
+   /* public List<ExerciseInfo> getExerciseInfo() {
         return exerciseInfo;
     }
 
@@ -106,5 +106,5 @@ public class User {
 
     public void setRoutine(List<Routine> routine) {
         this.routine = routine;
-    }
+    } */
 }

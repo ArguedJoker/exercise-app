@@ -43,7 +43,7 @@ public class RoutineService {
     public RoutineDTO updateRoutine(Long id, Routine routine) {
         Routine update = this.routineRepository.findById(id).orElseThrow(RoutineNotFoundException::new);
         update.setRoutineName(routine.getRoutineName());
-        return this.mapToDTO(this.routineRepository.save(routine));
+        return this.mapToDTO(this.routineRepository.save(update));
     }
 
     public Boolean deleteRoutineById(Long id) {

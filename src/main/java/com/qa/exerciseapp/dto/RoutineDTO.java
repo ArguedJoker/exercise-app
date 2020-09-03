@@ -10,8 +10,12 @@ public class RoutineDTO {
 
     private Long routineId;
     private String routineName;
-    private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
-    private User user;
+   // private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
+   // private User user;
+
+    public RoutineDTO(Long routineId, String routineName) {
+
+    }
 
     public RoutineDTO() {
     }
@@ -32,20 +36,4 @@ public class RoutineDTO {
         this.routineName = routineName;
     }
 
-
-    public List<ExerciseInfo> getExerciseInfo() {
-        return exerciseInfo;
-    }
-
-    public void setExerciseInfo(List<ExerciseInfo> exerciseInfo) {
-        this.exerciseInfo = exerciseInfo;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

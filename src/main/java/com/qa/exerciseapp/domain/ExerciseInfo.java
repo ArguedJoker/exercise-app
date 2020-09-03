@@ -8,7 +8,7 @@ public class ExerciseInfo {
     @GeneratedValue
     private Long exerciseInfoId;
 
-    @Column (nullable = false, unique = true )
+    @Column (nullable = false)
     private String exerciseTitle;
 
     @Column
@@ -26,12 +26,12 @@ public class ExerciseInfo {
     @Column
     private int numberOfReps;
 
-    @ManyToOne(targetEntity = User.class)
+    /*@ManyToOne(targetEntity = User.class)
     private User user;
 
     @ManyToOne(targetEntity = Routine.class)
     private Routine routine;
-
+*/
     public ExerciseInfo() {
 
     }
@@ -90,7 +90,7 @@ public class ExerciseInfo {
         this.numberOfReps = numberOfReps;
     }
 
-    public User getUser() {
+   /* public User getUser() {
         return user;
     }
 
@@ -104,7 +104,7 @@ public class ExerciseInfo {
 
     public void setRoutine(Routine routine) {
         this.routine = routine;
-    }
+    }*/
 }
 
 

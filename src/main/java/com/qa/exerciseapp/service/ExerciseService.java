@@ -49,7 +49,7 @@ public class ExerciseService {
         update.setTargetMuscle(exerciseInfo.getTargetMuscle());
         update.setNumberOfSets(exerciseInfo.getNumberOfSets());
         update.setNumberOfReps(exerciseInfo.getNumberOfReps());
-        return this.mapToDTO(this.exerciseRepository.save(exerciseInfo));
+        return this.mapToDTO(this.exerciseRepository.save(update));
     }
 
     public Boolean deleteExerciseById(Long id) {
