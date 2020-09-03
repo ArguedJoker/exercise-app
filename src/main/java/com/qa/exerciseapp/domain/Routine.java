@@ -16,7 +16,7 @@ public class Routine {
     @Column (nullable = false)
     private String routineName;
 
-    @OneToMany(mappedBy = "routine", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "Routine", fetch = FetchType.EAGER)
     private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
 
     @ManyToOne(targetEntity = User.class)
