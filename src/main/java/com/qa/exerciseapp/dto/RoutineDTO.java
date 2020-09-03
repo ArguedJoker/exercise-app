@@ -1,8 +1,5 @@
 package com.qa.exerciseapp.dto;
 
-import com.qa.exerciseapp.domain.ExerciseInfo;
-import com.qa.exerciseapp.domain.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +7,10 @@ public class RoutineDTO {
 
     private Long routineId;
     private String routineName;
-   // private List<ExerciseInfo> exerciseInfo = new ArrayList<>();
-   // private User user;
+    private List<ExerciseInfoDTO> exerciseInfo = new ArrayList<>();
 
-    public RoutineDTO(Long routineId, String routineName) {
-
+    public RoutineDTO(String routineName) {
+        this.routineName = routineName;
     }
 
     public RoutineDTO() {
@@ -36,4 +32,11 @@ public class RoutineDTO {
         this.routineName = routineName;
     }
 
+    public List<ExerciseInfoDTO> getExerciseInfo() {
+        return exerciseInfo;
+    }
+
+    public void setExerciseInfo(List<ExerciseInfoDTO> exerciseInfo) {
+        this.exerciseInfo = exerciseInfo;
+    }
 }

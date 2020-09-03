@@ -1,7 +1,6 @@
 package com.qa.exerciseapp.dto;
 
-import com.qa.exerciseapp.domain.Routine;
-import com.qa.exerciseapp.domain.User;
+
 
 public class ExerciseInfoDTO {
 
@@ -12,10 +11,18 @@ public class ExerciseInfoDTO {
     private String targetMuscle;
     private int numberOfSets;
     private int numberOfReps;
-   // private User user;
-    // private Routine routine;
 
-    public ExerciseInfoDTO(Long exerciseInfoId, String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {}
+
+    public ExerciseInfoDTO() {}
+
+    public ExerciseInfoDTO(String exerciseTitle, String exerciseDescription, int exerciseDuration, String targetMuscle, int numberOfSets, int numberOfReps) {
+        this.exerciseTitle = exerciseTitle;
+        this.exerciseDescription = exerciseDescription;
+        this.exerciseDuration = exerciseDuration;
+        this.targetMuscle = targetMuscle;
+        this.numberOfSets = numberOfSets;
+        this.numberOfReps = numberOfReps;
+    }
 
     public Long getExerciseInfoId() {
         return exerciseInfoId;
@@ -23,10 +30,6 @@ public class ExerciseInfoDTO {
 
     public void setExerciseInfoId(Long exerciseInfoId) {
         this.exerciseInfoId = exerciseInfoId;
-    }
-
-    public ExerciseInfoDTO() {
-
     }
 
     public String getExerciseTitle() {
@@ -76,4 +79,22 @@ public class ExerciseInfoDTO {
     public void setNumberOfReps(int numberOfReps) {
         this.numberOfReps = numberOfReps;
     }
+
+/* public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
+    }
+
+    */
 }
