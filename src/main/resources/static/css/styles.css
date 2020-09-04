@@ -5,7 +5,6 @@
 
 body,
 html {
-    background-color: aqua;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
 }
@@ -35,7 +34,7 @@ html {
 #routine {
     margin: 10px;
 }
-#execerise {
+#exercise {
     margin: 10px;
 }
 
