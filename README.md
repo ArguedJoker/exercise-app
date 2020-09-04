@@ -181,7 +181,11 @@ In the initial stages this application will display CRUD principles only for the
 
 ### Database Structure
 
-[ERD goes here]
+<p align="center">
+    <img width="600" height="400" src="./src/main/resources/static/Media/pictures/DBMS-ER-diagram-(UML-notation).png">
+</p>
+
+Creating a UML was very important in being able to visualise the relational database to be created. This UML shows the one to many relationship between users, routines and exercises. In a short summary, one user can have many routines and one routine can have many exercises. This concept is crucial to creating the database and the overall way I would want to implement CRUD functionality.
 
 [Back to Contents](#Contents)
 
