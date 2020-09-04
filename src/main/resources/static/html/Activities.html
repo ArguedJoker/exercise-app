@@ -2,25 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Pump it | Activities Page</title>
     <script src="../js/homepage.js"></script>
 </head>
 <body>
-<a href="welcome.html">Homepage</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed">
+    <div class="container-fluid">
+        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/Pump%20it!%20Logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav navbar-light bg-light">
+            <li class="nav-item">
+                <a href="welcome.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="registration.html" class="nav-link">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a href="Activities.html" class="nav-link">Activities</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
 
 <h1>Hi everyone</h1>
 
-<form id="notesForm">
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title"><br>
-    <label for="description">Last name:</label><br>
-    <input type="text" id="description" name="description"><br><br>
-    <label for="noteBookId">Notebook ID:</label><br>
-    <input type="text" id="noteBookId" name="noteBookId"><br><br>
-    <input type="submit" onclick="submitNote()" value="Submit">
-</form>
 
 
+<div class="box">
+    <form id="routine">
+        <label for="routineName">Title:</label><br>
+        <input type="text" id="routineName" name="title"><br>
+        <label for="routineId">Routine ID:</label><br>
+        <input type="number" id="routineId" name="routineId" required><br><br>
+        <input type="submit" onclick="submitNote()" value="Submit">
+    </form>
+</div>
+<br>
+<br>
+<div class="box">
+    <form id="exercise">
+        <label for="exerciseName">Exercise Name:</label><br>
+        <input type="text" id="exerciseName" name="title" required><br>
+        <label for="exerciseDescription">Description:</label><br>
+        <input type="text" id="exerciseDescription" name="description"><br><br>
+        <label for="exerciseId">Exercise ID:</label><br>
+        <input type="number" id="exerciseId" name="exerciseId" required><br><br>
+        <input type="submit" onclick="submitNote()" value="Submit">
+    </form>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popp.js/1.12.9/umg/popper.min.js"></script>
+<script src="https://use.fontawesmoe.com/releases/v5.0.8/hs/all.js"></script>
 
 </body>
 </html>
