@@ -191,7 +191,20 @@ Creating a UML was very important in being able to visualise the relational data
 
 ### CI Pipeline
 
-[Pipeline goes here]
+<p align="center">
+    <img width="600" height="400" src="./src/main/resources/static/Media/pictures/CI-Pipeline.png">
+</p>
+
+* Where the icon Jenkins is shown in the diagram, Circle-CI has been used instead as per project scope and requirements.
+
+<p> This diagram shows the whole Circle-CI Pipeline workflow. Java was chosen as the programming language to use as it is 
+fast and powerful. It is widely used language as evidenced in its write once and run anywhere ability and over 1 billion 
+devices using it today. Java is an object oriented (OOP) language and relatively simple to use. This OOP benefit works 
+well when creating relational databases. Git was chosen as the version control system because it was free, widely used 
+and regarded as industry standard. It makes it easy to contribute to and collaborate in open sourced  and in-house 
+projects and provides a level of control to the developer to allow them to manage their project. It is very well 
+documented and it allows one to showcase their work. Github allows for markdown. The biggest benefit is that the 
+developer can then use github as a repository and can track their changes across code versions.</p>
 
 [Back to Contents](#Contents)
 
