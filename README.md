@@ -194,7 +194,7 @@ In the initial stages this application will display CRUD principles only for the
 ## Project Tracking
 
 <p align="center">
-    <img width="500" height="500" src="./src/main/resources/static/Media/pictures/Sprint2-JIRA-Kanban-Board.png">
+    <img width="600" height="500" src="./src/main/resources/static/Media/pictures/Sprint2-JIRA-Kanban-Board.png">
 </p>
 
 Jira is a useful tool that was selected as it supports roadmapping requirements. It empowers the user to sketch out the big picture, communicate plans and enables to connect the overarching bigger roadmap goals between each individual and team to deadlines and daily tasks. It is great for Agile Methodologies and can be integrated with other applications such as teams for easier monitoring of progress which shows just how customisable it can be. This flexibility is probably its largest positive feature as different approaches can be accommodated and companies can still work in a positive and efficient manner.
