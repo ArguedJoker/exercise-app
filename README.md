@@ -287,8 +287,8 @@ Failure in any of the mandated points of the GDPR will lead to high penalties.
 
 ## Testing
 
-Once the frontend and the backend were completed and linked together, deep testing would be required to ensure the functionality of both aspects of the application.
-Testing was carried out using Junit and Selenium in two replicable ways as shown below.
+Once the frontend and the backend are completed and linked together, deep testing would be required to ensure the functionality of both aspects of the application.
+Testing will be carried out using Junit and Selenium in two replicable ways as shown below.
 
 ## Unit Testing
 
