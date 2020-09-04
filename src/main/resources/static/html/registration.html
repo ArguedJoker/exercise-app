@@ -3,12 +3,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <Title>Pump It! | Registration Page</Title>
     <script src="../js/homepage.js"></script>
 </head>
 <body onload="displayNotebooks()">
-<a href="../html/Greeting.html">Greeting</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed">
+    <div class="container-fluid">
+        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/Pump%20it!%20Logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav navbar-light bg-light">
+            <li class="nav-item">
+                <a href="welcome.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="registration.html" class="nav-link">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a href="Activities.html" class="nav-link">Activities</a>
+            </li>
+        </ul>
+    </div>
 
+</nav>
 
+<div class="box">
+    <form id="user">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="title" required><br>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" id="lastName" name="title" required><br><br>
+        <label for="height">Your height in cm: </label><br>
+        <input type="number" id="height" name="height"><br><br>
+        <label for="weight">Your height in cm: </label><br>
+        <input type="number" id="weight" name="weight"><br><br>
+        <label for="password">Password: </label><br>
+        <input type="number" id="password" name="password" required><br><br>
+        <input type="submit" onclick="submitNote()" value="Submit">
+    </form>
+</div>
 </body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popp.js/1.12.9/umg/popper.min.js"></script>
+<script src="https://use.fontawesmoe.com/releases/v5.0.8/hs/all.js"></script>
 </html>
