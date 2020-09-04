@@ -193,6 +193,10 @@ In the initial stages this application will display CRUD principles only for the
 
 ## Project Tracking
 
+<p align="center">
+    <img width="500" height="533" src="./src/main/resources/static/Media/pictures/Sprint2-JIRA-Kanban-Board.png">
+</p>
+
 [Back to Contents](#Contents)
 
 ## MOSCOW Analysis
