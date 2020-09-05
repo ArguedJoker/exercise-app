@@ -64,5 +64,5 @@ function deleteExercise(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send();
+    req.send()
 }
