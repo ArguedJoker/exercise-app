@@ -1,5 +1,5 @@
 function updateUser(){
-    let elements = document.getElementById("user").elements;
+    let elements = document.getElementById("updateUser").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -22,7 +22,7 @@ function updateUser(){
 }
 
 function updateRoutine(){
-    let elements = document.getElementById("routine").elements;
+    let elements = document.getElementById("updateRoutine").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -45,7 +45,7 @@ function updateRoutine(){
 }
 
 function updateExercise(){
-    let elements = document.getElementById("exercise").elements;
+    let elements = document.getElementById("updateExercise").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);

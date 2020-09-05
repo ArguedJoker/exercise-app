@@ -1,5 +1,5 @@
 function deleteUser(){
-    let elements = document.getElementById("user").elements;
+    let elements = document.getElementById("deleteUser").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -22,7 +22,7 @@ function deleteUser(){
 }
 
 function deleteRoutine(){
-    let elements = document.getElementById("routine").elements;
+    let elements = document.getElementById("deleteAndUpdateRoutine").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -45,7 +45,7 @@ req.send();
 }
 
 function deleteExercise(){
-    let elements = document.getElementById("exercise").elements;
+    let elements = document.getElementById("deleteExercise").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);

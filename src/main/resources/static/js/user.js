@@ -16,10 +16,19 @@ function displayUser(){
                     let elem = document.createElement('div');
                     let header = document.createElement('h1');
                     let userID = document.createElement('p');
+                    let weight = document.createElement('p');
+                    let height = document.createElement('p');
+                    let email = document.createElement('p');
                     header.textContent = "User name: " + el.firstName + " " + el.lastName;
                     userID.textContent = "User ID: " + el.userId;
+                    weight.textContent = el.weight;
+                    height.textContent = el.height;
+                    email.textContent = el.email;
                     elem.appendChild(header);
                     elem.appendChild(userID);
+                    elem.appendChild(email);
+                    elem.appendChild(weight);
+                    elem.appendChild(height);
 
                     el.routine.forEach(routine => {
 

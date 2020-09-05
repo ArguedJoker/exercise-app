@@ -16,7 +16,7 @@ function submitUser(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ firstName: obj.name, lastName: obj.name, weight: obj.weight, height: obj.height, email: obj.email }));
+    req.send(JSON.stringify({ firstName: obj.firstName, lastName: obj.lastName, weight: obj.weight, height: obj.height, email: obj.email }));
 }
 
 function submitRoutine(){
