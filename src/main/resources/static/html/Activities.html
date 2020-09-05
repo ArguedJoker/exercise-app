@@ -43,10 +43,21 @@
         <label for="userId">User ID:</label><br>
         <input type="text" id="userId" name="userId"><br><br>
         <input type="submit" onclick="submitRoutine()" value="Submit">
+    </form>
+</div>
+<div class="box">
+    <form id="deleteRoutine">
         <h3>Delete Routine Records</h3><br>
-        <label for="routineId">Routine ID:</label><br>
-        <input type="text" id="myRoutineId" name="routineId"<br><br>
+        <label for="deleteRoutineId">Routine ID:</label><br>
+        <input type="text" id="deleteRoutineId" name="routineId"><br><br>
         <input type="submit" onclick="deleteRoutine()" value="Delete">
+    </form>
+</div>
+<div class="box">
+    <form id="updateRoutine">
+        <h3>Delete Routine Records</h3><br>
+        <label for="updateRoutineName">Routine Title:</label><br>
+        <input type="text" id="updateRoutineName" name="title"><br>
         <input type="submit" onclick="updateRoutine()" value="update"><br>
     </form>
 </div>
@@ -70,7 +81,22 @@
     </form>
 </div>
 <div class="box">
-    <form>
+    <form id="updateExercise">
+        <label for="updateExerciseName">Exercise Name:</label><br>
+        <input type="text" id="updateExerciseName" name="title" required><br>
+        <label for="updateExerciseDescription">Exercise Description:</label><br>
+        <input type="text" id="updateExerciseDescription" name="description"><br><br>
+        <label for="updateTargetMuscle">Target Muscle:</label><br>
+        <input type="text" id="updateTargetMuscle" name="targetMuscle"><br>
+        <label for="updateNumberOfSets">Number of Sets:</label><br>
+        <input type="number" id="updateNumberOfSets" name="numberOfSets"><br><br>
+        <label for="updateNumberOfReps">Number of Repetitions:</label><br>
+        <input type="number" id="updateNumberOfReps" name="numberOfReps"><br><br>
+        <input type="submit" onclick="updateExercise()" value="update"><br>
+    </form>
+</div>
+<div class="box">
+    <form id="deleteExercise">
         <h3>Delete Exercise Records</h3><br>
         <input type="text" id="myExerciseId" name="exerciseId" required><br><br>
         <input type="submit" onclick="deleteExercise()" value="Submit">
