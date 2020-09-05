@@ -6,7 +6,7 @@ function deleteUser(){
         obj[item.name] = item.value;
     }
 
-    let myID = Number(obj.routineId);
+    let myID = Number(obj.userId);
 
     const req = new XMLHttpRequest();
     req.open("DELETE", "http://localhost:8080/deleteUser/" + myID);

@@ -1,5 +1,5 @@
-function submitExercise(){
-    let elements = document.getElementById("exercise").elements;
+function submitUser(){
+    let elements = document.getElementById("user").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -7,7 +7,7 @@ function submitExercise(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createExercise");
+    req.open("POST", "http://localhost:8080/createUsers");
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
@@ -16,7 +16,7 @@ function submitExercise(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ id: obj.exerciseId, title: obj.title, description: obj.description, muscle: obj.targetMuscle}));
+    req.send(JSON.stringify({ firstName: obj.name, lastName: obj.name, weight: obj.weight, height: obj.height, email: obj.email }));
 }
 
 function submitRoutine(){
@@ -40,8 +40,8 @@ function submitRoutine(){
     req.send(JSON.stringify({routineName: obj.title, user:{ userId: Number(obj.userId)} }));
 }
 
-function submitUser(){
-    let elements = document.getElementById("routine").elements;
+function submitExercise(){
+    let elements = document.getElementById("exercise").elements;
     let obj ={};
     for(let i = 0 ; i < elements.length - 1 ; i++){
         let item = elements.item(i);
@@ -49,7 +49,7 @@ function submitUser(){
     }
 
     const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createUsers");
+    req.open("POST", "http://localhost:8080/createExercise");
     req.onload = () => {
         if (req.status === 200 && req.readyState === 4) {
             console.log("Server Responded with: " + req.responseText);
@@ -58,5 +58,5 @@ function submitUser(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ title: obj.title, description: obj.description, user:{ id: Number(obj.userId)} }));
+    req.send(JSON.stringify({ id: obj.exerciseId, title: obj.title, description: obj.description, muscle: obj.targetMuscle}));
 }

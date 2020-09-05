@@ -18,7 +18,7 @@ function updateUser(){
         }
     };
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({routineName: obj.title, user:{ userId: Number(obj.userId)} }));
+    req.send(JSON.stringify({firstName: obj.firstName, lastName: obj.lastName, routine:{ routineId: Number(obj.routineId)} }));
 }
 
 function updateRoutine(){

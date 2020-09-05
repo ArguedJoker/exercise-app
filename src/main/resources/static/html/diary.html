@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Pump It! Home</title>
+    <script src="../js/routine.js"></script>
+    <script src="../js/user.js"></script>
+
+
+    <title>Pump It! Diary</title>
 </head>
 
-<body>
+<body onload="displayUser(); displayRoutines()">
 
 <!--Navigation-->
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed">
     <div class="container-fluid">
-        <a href="welcome.html" class="navbar-brand"><img class="logo" alt="Pump it logo" src="../Media/pictures/logo.png"></a>
+        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/logo.png" /></a>
         <ul class="navbar-nav navbar-light bg-light">
             <li class="nav-item">
                 <a href="welcome.html" class="nav-link">Home</a>
@@ -30,16 +34,9 @@
             </li>
         </ul>
     </div>
+
 </nav>
 
-<div class="card">
-    <img class="card-img-top" src="../Media/pictures/exercise.jpg" alr="Card image Cap">
-    <div class="card-body">
-        <h5 class="card-title"> Welcome to Pump It!</h5>
-        <p class="card-text"> This is an application to demonstrate CRUD functionality</p>
-        <a href="Activities.html" class="btn btn-primary"> Let's Start</a>
-    </div>
-</div>
 </body>
 
 <!--

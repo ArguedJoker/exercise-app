@@ -19,8 +19,8 @@ function displayRoutines(){
                     elem.appendChild(header);
 
                     el.exerciseInfo.forEach(exercise => {
-                        //console.log(exerciseInfo) // print all notes for each notebook
 
+                        let exerciseId = document.createElement('p');
                         let exerciseTitle = document.createElement('p');
                         let exerciseDescription = document.createElement('p');
                         let exerciseDuration = document.createElement('p');
@@ -28,6 +28,7 @@ function displayRoutines(){
                         let numberOfSets = document.createElement('p');
                         let numberOfReps = document.createElement('p');
 
+                        exerciseId.textContent = "Exercise ID: " + exercise.exerciseId;
                         exerciseTitle.textContent = "Exercise Title: " + exercise.exerciseTitle;
                         exerciseDescription.textContent = "Description: " + exercise.exerciseDescription;
                         exerciseDuration.textContent = "Duration of Exercise in seconds: " + exercise.exerciseDuration;
@@ -35,6 +36,7 @@ function displayRoutines(){
                         numberOfSets.textContent = "Number of Sets: " + exercise.numberOfSets;
                         numberOfReps.textContent = "Number of Reps: " + exercise.numberOfReps;
 
+                        elem.appendChild(exerciseId);
                         elem.appendChild(exerciseTitle);
                         elem.appendChild(exerciseDescription);
                         elem.appendChild(exerciseDuration);
