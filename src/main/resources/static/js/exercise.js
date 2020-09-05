@@ -1,24 +1,26 @@
-function displayRoutines(){
+function displayExercises(){
     const req = new XMLHttpRequest();
     req.onreadystatechange = () => {
-
+        // Example handle logic
         if (req.status === 200 && req.readyState === 4) {
             if (req.getResponseHeader("Content-Type") === "application/json") {
                 console.log("oh look its some JSON: " + req.responseText);
 
                 let header = document.createElement('h1');
-                header.textContent = "Routines";
+                header.textContent = "Exercises";
                 document.body.appendChild(header);
 
                 let stuff = JSON.parse(req.response);
-                stuff.forEach(el => {
+                stuff.forEach(exercise => {
+                    console.log(exercise); // prints whole element
+                    console.log(exercise.name); // allows access to specific value
 
+                    // adding title to the body of the page
                     let elem = document.createElement('div');
                     let header = document.createElement('h1');
-                    header.textContent = "Routine name: " + el.routineName;
-                    elem.appendChild(header);
+                    header.textContent = 'Exercise Name: ' + exercise.exerciseTitle;
 
-                    el.exerciseInfo.forEach(exercise => {
+                    stuff.forEach(exercise => {
                         //console.log(exerciseInfo) // print all notes for each notebook
 
                         let exerciseTitle = document.createElement('p');
@@ -37,11 +39,12 @@ function displayRoutines(){
 
                         elem.appendChild(exerciseTitle);
                         elem.appendChild(exerciseDescription);
-                        elem.appendChild(exerciseDuration);
+                       elem.appendChild(exerciseDuration);
                         elem.appendChild(targetMuscle);
-                        elem.appendChild(numberOfSets);
-                        elem.appendChild(numberOfReps);
+                       elem.appendChild(numberOfSets);
+                       elem.appendChild(numberOfReps);
                     })
+                    document.body.appendChild(header);
                     document.body.appendChild(elem);
                 });
             } else {
@@ -53,11 +56,7 @@ function displayRoutines(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://localhost:8080/Routines");
+    req.open("GET", "http://localhost:8080/Exercises");
     req.send();
 }
-
-
-
-
 

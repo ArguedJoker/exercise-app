@@ -1,4 +1,4 @@
-function displayNotebooks(){
+function displayUser(){
     const req = new XMLHttpRequest();
     req.onreadystatechange = () => {
         // Example handle logic
@@ -7,21 +7,21 @@ function displayNotebooks(){
                 console.log("oh look its some JSON: " + req.responseText);
                 // adding an element to the body example
                 let elem = document.createElement('div');
-                elem.textContent = "hello world";
+                elem.textContent = "User Profile";
                 document.body.appendChild(elem);
 
                 let stuff = JSON.parse(req.response);
-                stuff.forEach(el => {
-                    // console.log(el); // prints whole element
-                    // console.log(el.name); // allows access to specific value
+                stuff.forEach(user => {
+                     console.log(user); // prints whole element
+                     console.log(user.name); // allows access to specific value
 
                     // adding title to the body of the page
                     let elem = document.createElement('div');
                     let header = document.createElement('h1');
-                    header.textContent = "Notebook name: " + el.name;
+                    header.textContent = "User name: " + user.name;
                     elem.appendChild(header);
-                    el.notes.forEach(note => {
-                        console.log(note) // print all notes for each notebook
+                    stuff.forEach(user => {
+                        console.log(user) // print all notes for each notebook
                         let title = document.createElement('p');
                         let description = document.createElement('p');
                         title.textContent = "Title: " + note.title;
@@ -40,27 +40,7 @@ function displayNotebooks(){
             console.log("Oh no... handle error");
         }
     };
-    req.open("GET", "http://localhost:8080/getAllNoteBooks");
+    req.open("GET", "http://localhost:8080/User");
     req.send();
 }
 
-function submitNote(){
-    let elements = document.getElementById("notesForm").elements;
-    let obj ={};
-    for(let i = 0 ; i < elements.length - 1 ; i++){
-        let item = elements.item(i);
-        obj[item.name] = item.value;
-    }
-
-    const req = new XMLHttpRequest();
-    req.open("POST", "http://localhost:8080/createNote");
-    req.onload = () => {
-        if (req.status === 200 && req.readyState == 4) {
-            console.log("Server Responded with: " + req.responseText);
-        } else {
-            console.log("Oops...");
-        }
-    };
-    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    req.send(JSON.stringify({ title: obj.title, description: obj.description, noteBook:{ id: Number(obj.noteBookId)} }));
-}
