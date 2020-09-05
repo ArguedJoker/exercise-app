@@ -8,14 +8,14 @@
     <title>Pump it | Activities Page</title>
     <script src="../js/routine.js"></script>
     <script src="../js/exercise.js"></script>
+    <script src="../js/submit.js"></script>
+    <script src="../js/delete.js"></script>
+    <script src="../js/update.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed">
     <div class="container-fluid">
-        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/Pump%20it!%20Logo.png" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/logo.png" /></a>
         <ul class="navbar-nav navbar-light bg-light">
             <li class="nav-item">
                 <a href="welcome.html" class="nav-link">Home</a>
@@ -26,35 +26,54 @@
             <li class="nav-item">
                 <a href="Activities.html" class="nav-link">Activities</a>
             </li>
+            <li class="nav-item">
+                <a href="diary.html" class="nav-link">Diary</a>
+            </li>
         </ul>
     </div>
 
 </nav>
 
-<h1>Hi everyone</h1>
-
-
+<h2>Please fill in the forms below to get started: </h2>
 
 <div class="box">
     <form id="routine">
-        <label for="routineName">Title:</label><br>
+        <label for="routineName">Routine Title:</label><br>
         <input type="text" id="routineName" name="title"><br>
-        <label for="routineId">Routine ID:</label><br>
-        <input type="number" id="routineId" name="routineId" required><br><br>
+        <label for="userId">User ID:</label><br>
+        <input type="text" id="userId" name="userId"><br><br>
         <input type="submit" onclick="submitRoutine()" value="Submit">
+        <h3>Delete Routine Records</h3><br>
+        <label for="routineId">Routine ID:</label><br>
+        <input type="text" id="myRoutineId" name="routineId"<br><br>
+        <input type="submit" onclick="deleteRoutine()" value="Delete">
+        <input type="submit" onclick="updateRoutine()" value="update"><br>
     </form>
 </div>
-<br>
-<br>
+
 <div class="box">
     <form id="exercise">
         <label for="exerciseName">Exercise Name:</label><br>
         <input type="text" id="exerciseName" name="title" required><br>
-        <label for="exerciseDescription">Description:</label><br>
+        <label for="exerciseDescription">Exercise Description:</label><br>
         <input type="text" id="exerciseDescription" name="description"><br><br>
-        <label for="exerciseId">Exercise ID:</label><br>
-        <input type="number" id="exerciseId" name="exerciseId" required><br><br>
-        <input type="submit" onclick="submitNote()" value="Submit">
+        <label for="targetMuscle">Target Muscle:</label><br>
+        <input type="text" id="targetMuscle" name="targetMuscle"><br>
+        <label for="numberOfSets">Number of Sets:</label><br>
+        <input type="number" id="numberOfSets" name="numberOfSets"><br><br>
+        <label for="numberOfReps">Number of Repetitions:</label><br>
+        <input type="number" id="numberOfReps" name="numberOfReps"><br><br>
+        <label for="routineId"> Routine ID: </label><br>
+        <input type="number" id="routineId" name="routineId"><br><br>
+        <input type="submit" onclick="submitExercise()" value="Submit">
+        <input type="submit" onclick="updateExercise()" value="update"><br>
+    </form>
+</div>
+<div class="box">
+    <form>
+        <h3>Delete Exercise Records</h3><br>
+        <input type="text" id="myExerciseId" name="exerciseId" required><br><br>
+        <input type="submit" onclick="deleteExercise()" value="Submit">
     </form>
 </div>
 
