@@ -1,10 +1,10 @@
-version: 1.0
+version: 2.1
 jobs:
   test:
     machine:
       enabled: true
     steps:
-      - run: echo "Tests can run here"
+      - run: echo "Tests can run here!"
   deploy:
     machine:
       enabled: true
@@ -19,12 +19,10 @@ jobs:
           name: Deploy Application
           command: ssh $SSH_USER@$SSH_HOST "cd ~/exercise-app && mvn clean install && mvn spring-boot:run"
 workflows:
-  version: 1.0
-  test and deploy:
+  version: 2.1
+  test-and-deploy:
     jobs:
       - test
-          - deploy:
+      - deploy:
           requires:
             - test
-
-
