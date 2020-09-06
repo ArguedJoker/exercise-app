@@ -38,6 +38,7 @@
 
 <div class="box">
     <form id="routine">
+        <h3>Submit Routine</h3>
         <label for="routineName">Routine Title:</label><br>
         <input type="text" id="routineName" name="title"><br>
         <label for="userId">User ID:</label><br>
@@ -47,7 +48,7 @@
 </div>
 <div class="box">
     <form id="deleteRoutine">
-        <h3>Delete Routine Records</h3><br>
+        <h3>Delete Routine</h3><br>
         <label for="deleteRoutineId">Routine ID:</label><br>
         <input type="text" id="deleteRoutineId" name="routineId"><br><br>
         <input type="submit" onclick="deleteRoutine()" value="Delete">
@@ -55,17 +56,17 @@
 </div>
 <div class="box">
     <form id="updateRoutine">
-        <h3>Delete Routine Records</h3><br>
-        <label for="updateRoutineName">Routine Title:</label><br>
-        <input type="text" id="updateRoutineName" name="title"><br>
-        <input type="submit" onclick="updateRoutine()" value="update"><br>
+        <h3>Update Routine</h3><br>
+        <label for="updateRoutineName">Routine Name:</label><br>
+        <input type="text" id="updateRoutineName" name="updateRoutineName"><br><br>
+        <input type="submit" onclick="updateRoutine()" value="Delete">
     </form>
 </div>
-
 <div class="box">
     <form id="exercise">
+        <h3>Submit Exercise</h3>
         <label for="exerciseName">Exercise Name:</label><br>
-        <input type="text" id="exerciseName" name="title" required><br>
+        <input type="text" id="exerciseName" name="title"><br>
         <label for="exerciseDescription">Exercise Description:</label><br>
         <input type="text" id="exerciseDescription" name="description"><br><br>
         <label for="targetMuscle">Target Muscle:</label><br>
@@ -77,13 +78,13 @@
         <label for="routineId"> Routine ID: </label><br>
         <input type="number" id="routineId" name="routineId"><br><br>
         <input type="submit" onclick="submitExercise()" value="Submit">
-        <input type="submit" onclick="updateExercise()" value="update"><br>
     </form>
 </div>
 <div class="box">
     <form id="updateExercise">
+        <h3>Update Exercise</h3>
         <label for="updateExerciseName">Exercise Name:</label><br>
-        <input type="text" id="updateExerciseName" name="title" required><br>
+        <input type="text" id="updateExerciseName" name="title"><br>
         <label for="updateExerciseDescription">Exercise Description:</label><br>
         <input type="text" id="updateExerciseDescription" name="description"><br><br>
         <label for="updateTargetMuscle">Target Muscle:</label><br>
@@ -98,15 +99,17 @@
 <div class="box">
     <form id="deleteExercise">
         <h3>Delete Exercise Records</h3><br>
-        <input type="text" id="myExerciseId" name="exerciseId" required><br><br>
+        <input type="text" id="myExerciseId" name="exerciseId"><br><br>
         <input type="submit" onclick="deleteExercise()" value="Submit">
     </form>
 </div>
+
+
+
+</body>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popp.js/1.12.9/umg/popper.min.js"></script>
 <script src="https://use.fontawesmoe.com/releases/v5.0.8/hs/all.js"></script>
-
-</body>
 </html>
