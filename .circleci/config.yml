@@ -20,7 +20,7 @@ jobs:
           command: ssh $SSH_USER@$SSH_HOST "cd ~/exercise-app && mvn clean install && mvn spring-boot:run"
 workflows:
   version: 2.1
-    test and deploy:
+    test-and-deploy:
       jobs:
           - test
             - deploy:
