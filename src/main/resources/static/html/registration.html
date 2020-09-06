@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed">
     <div class="container-fluid">
-        <a href="welcome.html" class="navbar-brand"><img class="logo" src="../Media/pictures/logo.png" /></a>
+        <a href="welcome.html" class="navbar-brand"><img class="logo" alt="logo" src="../Media/pictures/logo.png" /></a>
         <ul class="navbar-nav navbar-light bg-light">
         <li class="nav-item">
             <a href="welcome.html" class="nav-link">Home</a>
@@ -36,35 +36,37 @@
 
 <div class="box">
     <form id="user">
+        <h3>Submit User</h3>
         <label for="email">Email:</label>
         <input type="text" id="email" name="email"><br><br>
         <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="title" required><br>
+        <input type="text" id="firstName" name="title"><br>
         <label for="lastName">Last name:</label><br>
-        <input type="text" id="lastName" name="title" required><br><br>
+        <input type="text" id="lastName" name="title"><br><br>
         <label for="height">Your height in cm: </label><br>
         <input type="number" id="height" name="height"><br><br>
         <label for="weight">Your weight in kg: </label><br>
         <input type="number" id="weight" name="weight"><br><br>
         <label for="password">Password: </label><br>
-        <input type="number" id="password" name="password" required><br><br>
+        <input type="number" id="password" name="password"><br><br>
         <input type="submit" onclick="submitUser()" value="Submit">
     </form>
 </div>
 <div class="box">
     <form id="updateUser">
+        <h3>Update User Information</h3>
         <label for="updateEmail">Email:</label>
         <input type="text" id="updateEmail" name="email"><br><br>
         <label for="updateFirstName">First Name:</label><br>
-        <input type="text" id="updateFirstName" name="title" required><br>
+        <input type="text" id="updateFirstName" name="title"><br>
         <label for="updateLastName">Last name:</label><br>
-        <input type="text" id="updateLastName" name="title" required><br><br>
+        <input type="text" id="updateLastName" name="title"><br><br>
         <label for="updateHeight">Your height in cm: </label><br>
         <input type="number" id="updateHeight" name="height"><br><br>
         <label for="updateWeight">Your weight in kg: </label><br>
         <input type="number" id="updateWeight" name="weight"><br><br>
         <label for="updatePassword">Password: </label><br>
-        <input type="number" id="updatePassword" name="password" required><br><br>
+        <input type="number" id="updatePassword" name="password"><br><br>
         <input type="submit" onclick="updateUser()" value="update">
     </form>
 </div>
@@ -72,7 +74,7 @@
 <div class="box">
     <form id="deleteUser">
         <h3>Delete User Records</h3><br>
-        <input type="text" id="userId" name="userId" required><br><br>
+        <input type="text" id="deleteUserId" name="userId"><br><br>
         <input type="submit" onclick="deleteUser()" value="Submit">
     </form>
 </div>
