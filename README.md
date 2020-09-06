@@ -46,10 +46,10 @@ To be continued at a later date.
     * [Unit Testing](#Unit-Testing)
     * [Integration Testing](#Integration-Testing)
 * [Frontend Design](#Frontend-Design)
-* [Application Feature Outline](#Application-Feature-Outline)
-    * [User Story](#User-Stories)
-        * [What makes a User Story?](#so-what-makes-a-user-story)
-    * [Page planning](#Page-planning)
+    * [Application Feature Outline](#Application-Feature-Outline)
+        * [User Story](#User-Stories)
+            * [What makes a User Story?](#so-what-makes-a-user-story)
+        * [Page planning](#Page-planning)
 * [Known Issues](#Known-Issues)
 * [Future Improvements & possible Features](#Future-Improvements-&-possible-features)
 * [Author](#Author)
@@ -177,8 +177,6 @@ In the initial stages this application will display CRUD principles only for the
 
 ## Architecture
 
-[Back to Contents](#Contents)
-
 ### Database Structure
 
 <p align="center">
@@ -237,7 +235,8 @@ MoSCoW itself is an acronym where the capital letters are all derived from the f
 |Must Have | Should Have | Could Have | Won't Have |
 |----------|-------------|------------|------------|
 | CRUD functionality | Log-in  functionality | aesthetic Front-End Design | Using quote generator to create fun inspirational quotes each time user logs in      | 
-|          |             | Inspirational Quote Generator | |
+|          |             |  | |
+
 [Back to Contents](#Contents)
 
 ## Risk Assessment
@@ -322,8 +321,6 @@ the interfaces and external organizations.
 [Back to Contents](#Contents)
 
 ## Frontend Design
-
-[Back to Contents](#Contents)
 
 ## Application Feature Outline
 
