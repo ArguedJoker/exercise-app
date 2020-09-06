@@ -185,7 +185,9 @@ In the initial stages this application will display CRUD principles only for the
     <img width="600" height="400" alt="UML diagram showing one to many relationship between User, routine and exercises respectively." src="./src/main/resources/static/Media/pictures/DBMS-ER-diagram-(UML%20notation).png">
 </p>
 
-Creating a UML was very important in being able to visualise the relational database to be created. This UML shows the one to many relationship between users, routines and exercises takes shape. In a short summary, one user can have many routines and one routine can have many exercises. This concept is crucial to creating the database and the overall way I would want to implement CRUD functionality.
+<p>Creating a UML was very important in being able to visualise the relational database to be created. This UML shows the one to many relationship between users, routines and exercises takes shape. There are a total of three tables: Users, Routines and ExerciseInfo.The foreign keys link each of the tables and together create a relationship: one user can have many routines (linked by routineId) and one routine can have many exercises (linked by exerciseInfoId). This concept is crucial to creating the database and the overall way I would want to implement CRUD functionality.</p>
+
+<p>  
 
 [Back to Contents](#Contents)
 
@@ -195,19 +197,20 @@ Creating a UML was very important in being able to visualise the relational data
     <img width="600" height="400" src="./src/main/resources/static/Media/pictures/CI-Pipeline.png">
 </p>
 
-* Where the icon Jenkins is shown in the diagram, Circle-CI has been used instead as per project scope and requirements.
+* Where the icon Jenkins is shown in the diagram, Circle-CI has been used as the CI Server and Maven as the Build Tool. 
 
-<p> This diagram shows the whole Circle-CI Pipeline workflow. Java was chosen as the programming language to use as it is 
+<p> This diagram shows the whole Circle-CI Pipeline workflow.</p>
+
+<p>Java was chosen as the programming language to use as it is 
 fast and powerful. It is widely used language as evidenced in its write once and run anywhere ability and over 1 billion 
 devices using it today. Java is an object oriented (OOP) language and relatively simple to use. This OOP benefit works 
 well when creating relational databases. Intellij was used as the ide of choice as it is the one I am more accustomed to at this time.
 Git was chosen as the version control system because it was free, widely used 
 and regarded as industry standard. It makes it easy to contribute to and collaborate in open sourced  and in-house 
-projects and provides a level of control to the developer to allow them to manage their project. It is very well 
-documented and it allows one to showcase their work. Github allows for markdown. The biggest benefit is that the 
-developer can then use github as a repository and can track their changes across code versions.</p>
+projects and provides a level of control to the developer to allow them to manage their project by creating a repository. The created repository will then serve as a central hub for the code created. with each new feature new feature a branch would be created. Once successfully tested it would be pulled and the branch would be merged into the master. Git itself is very well documented providing a lot of information for anyone using Git for the first time.</p>
 
-<p></p>
+<p>Circle Ci  would be necessary to act as a hosting system for the application. A Google Cloud Service Server was used to be used with Ubuntu linux operating system. A secondary SQL server would be required to function as a database storage for the backend of the application. With two database created this would allow for testing with one database and deployment for the other.<p>
+
 [Back to Contents](#Contents)
 
 ## Project Tracking
@@ -239,7 +242,7 @@ MoSCoW itself is an acronym where the capital letters are all derived from the f
 
 ## Risk Assessment
 
-Before any work on the project is under way, it is important to assess the various risks that can affect successful completion. In the analysisI have included various risks that could affect each stage of the project ranging from SQL injections through to the likelihood of the risk and the impact.
+Before any work on the project is under way, it is important to assess the various risks that can affect successful completion. In the analysis I have included various risks that could affect each stage of the project ranging from SQL injections through to the likelihood of the risk and the impact.
 Using this information I am able to classify each risk into an appropriate column.
 
 <details>
