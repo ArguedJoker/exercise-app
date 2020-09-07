@@ -46,12 +46,15 @@ To be continued at a later date.
     * [Unit Testing](#Unit-Testing)
     * [Integration Testing](#Integration-Testing)
 * [Frontend Design](#Frontend-Design)
-* [Application Feature Outline](#Application-Feature-Outline)
-    * [User Story](#User-Stories)
-        * [What makes a User Story?](#so-what-makes-a-user-story)
-    * [Page planning](#Page-planning)
+    * [Application Feature Outline](#Application-Feature-Outline)
+        * [User Story](#User-Stories)
+            * [What makes a User Story?](#so-what-makes-a-user-story)
+        * [Page planning](#Page-planning)
 * [Known Issues](#Known-Issues)
 * [Future Improvements & possible Features](#Future-Improvements-&-possible-features)
+    * [Long Term Improvements](#Long-Term-Improvements)
+            * [Data Protection (GDPR)](#Data-Protection-(GDPR))
+            * [Security](#Security)* 
 * [Author](#Author)
 
 
@@ -88,7 +91,9 @@ CRUD Stands for :
 * Update
 * Delete
 
-This means that the application that is to be created will perform create, read, update and delete (CRUD) functions. The project will demonstrate my mastery of the knowledge and skill-set so far, in particular the following skill-set learned from all core training modules:
+This means that the application that is to be created will perform create, read, update and delete (CRUD) functions. The ability to create records is crucial and testing would be carried out by adding records and then checking their corresponding pages. Deleting records would be crucial for getting rid of records that become redundant and unecessary over time. Testing would be in the same way as creation but the absence of a previous record being the goal. Update would allow the user to make changes to an existing record. Testing would be performed with the goal of ensuring that previous records could be manipulated to show new information without changing the corresponding record id.
+
+The project will demonstrate my mastery of the knowledge and skill-set so far, in particular the following skill-set learned from all core training modules:
 
 * Project Management
 * Databases
@@ -185,7 +190,7 @@ In the initial stages this application will display CRUD principles only for the
     <img width="600" height="400" alt="UML diagram showing one to many relationship between User, routine and exercises respectively." src="./src/main/resources/static/Media/pictures/DBMS-ER-diagram-(UML%20notation).png">
 </p>
 
-Creating a UML was very important in being able to visualise the relational database to be created. This UML shows the one to many relationship between users, routines and exercises takes shape. In a short summary, one user can have many routines and one routine can have many exercises. This concept is crucial to creating the database and the overall way I would want to implement CRUD functionality.
+<p>Creating a UML was very important in being able to visualise the relational database to be created. This UML shows the one to many relationship between users, routines and exercises takes shape. There are a total of three tables: Users, Routines and ExerciseInfo.The foreign keys link each of the tables and together create a relationship: one user can have many routines (linked by routineId) and one routine can have many exercises (linked by exerciseInfoId). This concept is crucial to creating the database and the overall way I would want to implement CRUD functionality.</p>
 
 [Back to Contents](#Contents)
 
@@ -195,19 +200,20 @@ Creating a UML was very important in being able to visualise the relational data
     <img width="600" height="400" src="./src/main/resources/static/Media/pictures/CI-Pipeline.png">
 </p>
 
-* Where the icon Jenkins is shown in the diagram, Circle-CI has been used instead as per project scope and requirements.
+Where the icon Jenkins is shown in the diagram, Circle-CI has been used as the CI Server and Maven as the Build Tool. 
 
-<p> This diagram shows the whole Circle-CI Pipeline workflow. Java was chosen as the programming language to use as it is 
+<p> This diagram shows the whole Circle-CI Pipeline workflow.</p>
+
+<p>Java was chosen as the programming language to use as it is 
 fast and powerful. It is widely used language as evidenced in its write once and run anywhere ability and over 1 billion 
 devices using it today. Java is an object oriented (OOP) language and relatively simple to use. This OOP benefit works 
 well when creating relational databases. Intellij was used as the ide of choice as it is the one I am more accustomed to at this time.
 Git was chosen as the version control system because it was free, widely used 
 and regarded as industry standard. It makes it easy to contribute to and collaborate in open sourced  and in-house 
-projects and provides a level of control to the developer to allow them to manage their project. It is very well 
-documented and it allows one to showcase their work. Github allows for markdown. The biggest benefit is that the 
-developer can then use github as a repository and can track their changes across code versions.</p>
+projects and provides a level of control to the developer to allow them to manage their project by creating a repository. The created repository will then serve as a central hub for the code created. with each new feature new feature a branch would be created. Once successfully tested it would be pulled and the branch would be merged into the master. Git itself is very well documented providing a lot of information for anyone using Git for the first time.</p>
 
-<p></p>
+<p>Circle Ci  would be necessary to act as a hosting system for the application. A Google Cloud Service Server was used to be used with Ubuntu linux operating system. A secondary SQL server would be required to function as a database storage for the backend of the application. With two database created this would allow for testing with one database and deployment for the other.<p>
+
 [Back to Contents](#Contents)
 
 ## Project Tracking
@@ -217,6 +223,7 @@ developer can then use github as a repository and can track their changes across
 </p>
 
 Jira is a useful tool that was selected as it supports roadmapping requirements. It empowers the user to sketch out the big picture, communicate plans and enables to connect the overarching bigger roadmap goals between each individual and team to deadlines and daily tasks. It is great for Agile Methodologies and can be integrated with other applications such as teams for easier monitoring of progress which shows just how customisable it can be. This flexibility is probably its largest positive feature as different approaches can be accommodated and companies can still work in a positive and efficient manner.
+My first sprint was very successful as I was able to complete all of my tasks such as completing the risk assessment and I was able spend more time on learning Java.  The second sprint lasted 2 weeks in which I have done a lot of coding of the application and have managed to complete the crud logic functionality on the backend. I am still currently in the process of making CRUD functionality available on the frontend, though I have been successful in create, read and delete functionality.
 
 [Back to Contents](#Contents)
 
@@ -239,8 +246,7 @@ MoSCoW itself is an acronym where the capital letters are all derived from the f
 
 ## Risk Assessment
 
-Before any work on the project is under way, it is important to assess the various risks that can affect successful completion. In the analysisI have included various risks that could affect each stage of the project ranging from SQL injections through to the likelihood of the risk and the impact.
-Using this information I am able to classify each risk into an appropriate column.
+Before any work on the project is under way, it is important to assess the various risks that can affect successful completion. In the analysis I have included various risks that could affect each stage of the project ranging from SQL injections through to the likelihood of the risk and the impact.
 
 <details>
 
@@ -268,38 +274,6 @@ Risk Tolerance would dictate whether action would need to be taken or if the cur
                  
 [Back to Contents](#Contents)
 
-## Data Protection (GDPR)
-
-Despite the United kingdom breaking from the European Union, GDPR laws still come into play as potential customers may be from EU countries and the law stipulates that any applications that allow this kind of access must
-be GDPR compliant. The major directive power of the law is that it empowers the individual to control their data. Entities that ask for personal data online must disclose to the individual what will happen to the data, who has access to the data and 
-who can view their data from the moment it is submitted. This brings to light the importance of security for web apps.
-
-The four most important aspects of the law dictate:
-
-* > Easier access to your own data: individuals will have more information on how their data is processed and this information should be available in a clear and understandable way.
-* > A right to data portability: it will be easier to transfer your personal data between service providers.
-* > A clarified 'right to be forgotten': when you no longer want your data to be processed, and provided that there are no legitimate grounds for retaining it, the data will be delete.
-* >The right to know when your data has been hacked: For example, companies and organizations must notify the national supervisory authority of serious data breaches as soon as possible so that users can take appropriate measures.
-
-## Security
-
-Following best practice guidance, the application will hold and implement as little personal data as is possible such as the birth name, email and country of residence. It should be noted that as the application grows, the need for more personal information is also likely to grow.
-The data procured must be encrypted and hashed to avoid any form of data extraction during a data breach and that individuals are kept up to date with any such exposures. OAUTH is one potential way of minimising personal data use whilst increasing the use of authentication ID however, due to time contraints 
-it is unlikely to have been implemented for the current project deadline. There will be a table to highlight what will be implemented into the application and what will be put on hold for future sprints should the opportunity arise.
-
-Since the application will require authentication, HTTPS would be needed, and it would be prudent to ensure that SSL certificates are up to date and properly deployed to avoid vulnerabilities to SSL protocols.
-The application will also take in some personal information (through registration or contact form) such as emails and names and we must ensure that the customers are informed and clear on how this data is used and for how long it is stored. This will be implemented through the use of a terms and conditions as part of the registration process to create an account.
-The information stored will be encrypted and stored on the GCP. Google Cloud will be in charge of ensuring that the data is stored safely and it is in their remit on legals grounds posited by the GDPR. As a developer I do not need to concern myself about this part of my obligation.
-Users must have proper notice about the use of cookies used by the application. Users should be told that cookies are in use and what the cookies would be used for. Users should also have the choice to accept or deny cookies. Cookies must be properly destroyed after a user session has been concluded through logout or session inactivity. At this point, the application will not be storing data for commercial purposes.
-The application is purely for the user to store their activities and their personal use. In the future this may change as it would make financial sense for advertising.
-
-When registering for an account, users will be asked to create security questions which must not include personal components, as per GDPR. If it is possible, in the future two-factor authentication will be where I would want to strive for the application to be in but this will not be in the current implementation fo the application.
-Another part of the registration will incorporate the terms and conditions which is an opportunity for clients to really become clear on what it is that they have signed up for and how their data will be used. An enforcement mechanism is necessary to have clear evidence that users have agreed to terms and conditions and only then can they use the application.
-Any user who decides to delete their account must have a clear way of doing so and once they have left the service their account information must be deleted. 
-
-Failure in any of the mandated points of the GDPR will lead to high penalties.
-
-
 ## Testing
 
 Once the frontend and the backend are completed and linked together, deep testing would be required to ensure the functionality of both aspects of the application.
@@ -324,13 +298,12 @@ the interfaces and external organizations.
 
 ## Application Feature Outline
 
-* User can create and delete their account
-* User can create, read and update their account
-* User can create activities
-* User can read activities
-* User can update activities
-* User can delete activities
-* Using quote generator to create fun inspirational quotes each time user logs in 
+
+* User can create, read and update their account.
+* User can create activities like routines or exercises. There would be an activities page for this.
+* User can update activities on the activity page.
+* User can delete activities on the activity page.
+* User can read activities on the diary page.
 
 ## User Stories
 
@@ -343,7 +316,7 @@ the product. The main point of a user story is to _express the end goal as simpl
 
  ### So what makes a User Story?
 
-Using JIRA, I created multiple user stories the followed the process discussed at a high overview level. I will quickly describe some examples from my point as a developer.
+Using JIRA, I created multiple user stories that followed the process discussed at a high overview level. I will quickly describe some examples from my point as a developer.
 Using JIRA to create an Epic I was able to create multiple user stories. A single user story is made up of multiple tasks that are to be completed. This one to many relationships (1 epic - many stories and 1 story - many tasks) really made
 breaking down the whole overarching goal of creating a CRUD web application much easier by allowing me to break the smaller goals even further into more manageable sizes. It also enabled me to really give myself realistic
 time management, so I could always know where I was in a sprint and if I was on schedule or not. 
@@ -366,9 +339,9 @@ The project will utilise HTML, CSS and Javascript with bootstrap to create a vis
 
 Currently, there are plans for a homepage where current and prospective users can log in or make a new account. If at any point a new user tries to navigate to a page where they do not have access to they will be redirected to the login or make a new account page.
 
-Customers that are logged in will see a welcome back page instead of the home page. On this home page will be the latest inspirational quote, and the last activity the customer had added.
+Customers that are logged in will see a welcome back page instead of the home page. If a customer wants to add a new activity, they fill in the appropriate form and then they can click on the add button where they will be redirected to the add-an-activity page and can start to make the necessary additions to their activity.
 
-If a customer wants to add a new activity they can click on the add button (has a "+" symbol) where they will be redirected to the add-an-activity page and can start to make the necessary additions to their activity.
+If a customer wants to make a change and update an existing activity from the welcome page they are able to fill in the update form and then click submit. 
 
 If a customer wants to make a change and update an existing activity from the welcome page they are able to hover over the activity to show a drop down of options. Alternatively, the customer can go to the activities page.
 The final part of the application at this stage would allow for the user to delete their created account should they decide they do not want to use the application. To do this, they can navigate to their profile page where they can then delete their account.
@@ -386,12 +359,53 @@ The final part of the application at this stage would allow for the user to dele
 
 ## Known Issues
 
+* Currently, on the frontend, the create and delete functionality works for routines. However, creation for users and exercises does not work yet on the front end. 
+* Crud functionality is fully operational from the back end and can be tested fully through postman. 
+* There were plenty of issues that I came across for GCP and in trying to get the database which was largely to do with connection through keys.
+
 [Back to Contents](#Contents)
 
 ## Future Improvements & possible features
 
-* Plan to add the ability to allow user to upload a profile picture
-* allow for 0AUTH social media sign in 
+* complete creation and update functionality for users and exercises
+* link backend MySQL to application
+* add log in functionality
+* GCP Deployment
+
+## Long Term Improvements
+
+## Data Protection (GDPR)
+<details>
+Despite the United kingdom breaking from the European Union, GDPR laws still come into play as potential customers may be from EU countries and the law stipulates that any applications that allow this kind of access must
+be GDPR compliant. The major directive power of the law is that it empowers the individual to control their data. Entities that ask for personal data online must disclose to the individual what will happen to the data, who has access to the data and 
+who can view their data from the moment it is submitted. This brings to light the importance of security for web apps.
+
+The four most important aspects of the law dictate:
+
+* > Easier access to your own data: individuals will have more information on how their data is processed and this information should be available in a clear and understandable way.
+* > A right to data portability: it will be easier to transfer your personal data between service providers.
+* > A clarified 'right to be forgotten': when you no longer want your data to be processed, and provided that there are no legitimate grounds for retaining it, the data will be delete.
+* >The right to know when your data has been hacked: For example, companies and organizations must notify the national supervisory authority of serious data breaches as soon as possible so that users can take appropriate measures.
+</details>
+## Security
+<details>
+Following best practice guidance, the application will hold and implement as little personal data as is possible such as the birth name, email and country of residence. It should be noted that as the application grows, the need for more personal information is also likely to grow.
+The data procured must be encrypted and hashed to avoid any form of data extraction during a data breach and that individuals are kept up to date with any such exposures. OAUTH is one potential way of minimising personal data use whilst increasing the use of authentication ID however, due to time contraints 
+it is unlikely to have been implemented for the current project deadline. There will be a table to highlight what will be implemented into the application and what will be put on hold for future sprints should the opportunity arise.
+
+Since the application will require authentication, HTTPS would be needed, and it would be prudent to ensure that SSL certificates are up to date and properly deployed to avoid vulnerabilities to SSL protocols.
+The application will also take in some personal information (through registration or contact form) such as emails and names and we must ensure that the customers are informed and clear on how this data is used and for how long it is stored. This will be implemented through the use of a terms and conditions as part of the registration process to create an account.
+The information stored will be encrypted and stored on the GCP. Google Cloud will be in charge of ensuring that the data is stored safely and it is in their remit on legals grounds posited by the GDPR. As a developer I do not need to concern myself about this part of my obligation.
+Users must have proper notice about the use of cookies used by the application. Users should be told that cookies are in use and what the cookies would be used for. Users should also have the choice to accept or deny cookies. Cookies must be properly destroyed after a user session has been concluded through logout or session inactivity. At this point, the application will not be storing data for commercial purposes.
+The application is purely for the user to store their activities and their personal use. In the future this may change as it would make financial sense for advertising.
+
+When registering for an account, users will be asked to create security questions which must not include personal components, as per GDPR. If it is possible, in the future two-factor authentication will be where I would want to strive for the application to be in but this will not be in the current implementation fo the application.
+Another part of the registration will incorporate the terms and conditions which is an opportunity for clients to really become clear on what it is that they have signed up for and how their data will be used. An enforcement mechanism is necessary to have clear evidence that users have agreed to terms and conditions and only then can they use the application.
+Any user who decides to delete their account must have a clear way of doing so and once they have left the service their account information must be deleted. 
+
+Failure in any of the mandated points of the GDPR will lead to high penalties.
+
+</details>
 
 [Back to Contents](#Contents)
 
