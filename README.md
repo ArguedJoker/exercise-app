@@ -323,7 +323,7 @@ For example, breaking down "creating the front end" which would be my epic, I co
 This would mean that as a customer in order to be able to create a new work out diary I need to be able to log in to my account first (task 1) and then be able to create my diary for the day (task 2). 
 
 As a developer these two tasks could be broken down further into creating the log-in page, ensuring that back-end logic checked for user's credentials to match against database records and if successful, allow them to log in (task 1). 
-Once the user is logged in they would need to be redirected to a bespoke welcome page where they would then be able to create their work-out diary (task 2). I go into more technical detail in the next section.
+Once the user is logged in they would need to be redirected to a bespoke welcome page where they would then be able to create their work-out diary (task 2). 
 
 <p align="center">
     <img width="300" height="350" src="https://qa-courseware-images.s3.eu-west-2.amazonaws.com/agile/product-backlog-items/000.png" alt="mind map showing the one to many relationship between Epics, stories and tasks are related"/>
