@@ -385,6 +385,7 @@ The four most important aspects of the law dictate:
 * > A clarified 'right to be forgotten': when you no longer want your data to be processed, and provided that there are no legitimate grounds for retaining it, the data will be delete.
 * >The right to know when your data has been hacked: For example, companies and organizations must notify the national supervisory authority of serious data breaches as soon as possible so that users can take appropriate measures.
 </details>
+
 ## Security
 <details>
 Following best practice guidance, the application will hold and implement as little personal data as is possible such as the birth name, email and country of residence. It should be noted that as the application grows, the need for more personal information is also likely to grow.
