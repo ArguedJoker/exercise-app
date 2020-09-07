@@ -182,8 +182,6 @@ In the initial stages this application will display CRUD principles only for the
 
 ## Architecture
 
-[Back to Contents](#Contents)
-
 ### Database Structure
 
 <p align="center">
@@ -294,7 +292,7 @@ the interfaces and external organizations.
 
 ## Frontend Design
 
-[Back to Contents](#Contents)
+
 
 ## Application Feature Outline
 
