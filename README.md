@@ -40,8 +40,6 @@ To be continued at a later date.
 * [Project Tracking](#Project-Tracking)
 * [MoSCoW Analysis](#MOSCOW-Analysis)
 * [Risk Assessment](#Risk-Assessment)
-* [Data Protection (GDPR)](#Data-Protection-(GDPR))
-* [Security](#Security)
 * [Testing](#Testing)
     * [Unit Testing](#Unit-Testing)
     * [Integration Testing](#Integration-Testing)
@@ -52,6 +50,9 @@ To be continued at a later date.
         * [Page planning](#Page-planning)
 * [Known Issues](#Known-Issues)
 * [Future Improvements & possible Features](#Future-Improvements-&-possible-features)
+    * [Long Term Improvements](#Long-Term-Improvements)
+        * [Data Protection (GDPR)](#Data-Protection-(GDPR))
+        * [Security](#Security)
 * [Author](#Author)
 
 
@@ -270,38 +271,6 @@ Risk Tolerance would dictate whether action would need to be taken or if the cur
                  
 [Back to Contents](#Contents)
 
-## Data Protection (GDPR)
-
-Despite the United kingdom breaking from the European Union, GDPR laws still come into play as potential customers may be from EU countries and the law stipulates that any applications that allow this kind of access must
-be GDPR compliant. The major directive power of the law is that it empowers the individual to control their data. Entities that ask for personal data online must disclose to the individual what will happen to the data, who has access to the data and 
-who can view their data from the moment it is submitted. This brings to light the importance of security for web apps.
-
-The four most important aspects of the law dictate:
-
-* > Easier access to your own data: individuals will have more information on how their data is processed and this information should be available in a clear and understandable way.
-* > A right to data portability: it will be easier to transfer your personal data between service providers.
-* > A clarified 'right to be forgotten': when you no longer want your data to be processed, and provided that there are no legitimate grounds for retaining it, the data will be delete.
-* >The right to know when your data has been hacked: For example, companies and organizations must notify the national supervisory authority of serious data breaches as soon as possible so that users can take appropriate measures.
-
-## Security
-
-Following best practice guidance, the application will hold and implement as little personal data as is possible such as the birth name, email and country of residence. It should be noted that as the application grows, the need for more personal information is also likely to grow.
-The data procured must be encrypted and hashed to avoid any form of data extraction during a data breach and that individuals are kept up to date with any such exposures. OAUTH is one potential way of minimising personal data use whilst increasing the use of authentication ID however, due to time contraints 
-it is unlikely to have been implemented for the current project deadline. There will be a table to highlight what will be implemented into the application and what will be put on hold for future sprints should the opportunity arise.
-
-Since the application will require authentication, HTTPS would be needed, and it would be prudent to ensure that SSL certificates are up to date and properly deployed to avoid vulnerabilities to SSL protocols.
-The application will also take in some personal information (through registration or contact form) such as emails and names and we must ensure that the customers are informed and clear on how this data is used and for how long it is stored. This will be implemented through the use of a terms and conditions as part of the registration process to create an account.
-The information stored will be encrypted and stored on the GCP. Google Cloud will be in charge of ensuring that the data is stored safely and it is in their remit on legals grounds posited by the GDPR. As a developer I do not need to concern myself about this part of my obligation.
-Users must have proper notice about the use of cookies used by the application. Users should be told that cookies are in use and what the cookies would be used for. Users should also have the choice to accept or deny cookies. Cookies must be properly destroyed after a user session has been concluded through logout or session inactivity. At this point, the application will not be storing data for commercial purposes.
-The application is purely for the user to store their activities and their personal use. In the future this may change as it would make financial sense for advertising.
-
-When registering for an account, users will be asked to create security questions which must not include personal components, as per GDPR. If it is possible, in the future two-factor authentication will be where I would want to strive for the application to be in but this will not be in the current implementation fo the application.
-Another part of the registration will incorporate the terms and conditions which is an opportunity for clients to really become clear on what it is that they have signed up for and how their data will be used. An enforcement mechanism is necessary to have clear evidence that users have agreed to terms and conditions and only then can they use the application.
-Any user who decides to delete their account must have a clear way of doing so and once they have left the service their account information must be deleted. 
-
-Failure in any of the mandated points of the GDPR will lead to high penalties.
-
-
 ## Testing
 
 Once the frontend and the backend are completed and linked together, deep testing would be required to ensure the functionality of both aspects of the application.
@@ -324,13 +293,12 @@ the interfaces and external organizations.
 
 ## Application Feature Outline
 
-* User can create and delete their account
-* User can create, read and update their account
-* User can create activities
-* User can read activities
-* User can update activities
-* User can delete activities
-* Using quote generator to create fun inspirational quotes each time user logs in 
+* User can create and delete their account.
+* User can create, read and update their account.
+* User can create activities like routines or exercises. There would be an activities page for this.
+* User can update activities on the activity page.
+* User can delete activities on the activity page.
+* User can read activities on the diary page.
 
 ## User Stories
 
@@ -343,7 +311,7 @@ the product. The main point of a user story is to _express the end goal as simpl
 
  ### So what makes a User Story?
 
-Using JIRA, I created multiple user stories the followed the process discussed at a high overview level. I will quickly describe some examples from my point as a developer.
+Using JIRA, I created multiple user stories that followed the process discussed at a high overview level. I will quickly describe some examples from my point as a developer.
 Using JIRA to create an Epic I was able to create multiple user stories. A single user story is made up of multiple tasks that are to be completed. This one to many relationships (1 epic - many stories and 1 story - many tasks) really made
 breaking down the whole overarching goal of creating a CRUD web application much easier by allowing me to break the smaller goals even further into more manageable sizes. It also enabled me to really give myself realistic
 time management, so I could always know where I was in a sprint and if I was on schedule or not. 
@@ -366,11 +334,9 @@ The project will utilise HTML, CSS and Javascript with bootstrap to create a vis
 
 Currently, there are plans for a homepage where current and prospective users can log in or make a new account. If at any point a new user tries to navigate to a page where they do not have access to they will be redirected to the login or make a new account page.
 
-Customers that are logged in will see a welcome back page instead of the home page. On this home page will be the latest inspirational quote, and the last activity the customer had added.
+Customers that are logged in will see a welcome back page instead of the home page. If a customer wants to add a new activity, they fill in the appropriate form and then they can click on the add button where they will be redirected to the add-an-activity page and can start to make the necessary additions to their activity.
 
-If a customer wants to add a new activity they can click on the add button (has a "+" symbol) where they will be redirected to the add-an-activity page and can start to make the necessary additions to their activity.
-
-If a customer wants to make a change and update an existing activity from the welcome page they are able to hover over the activity to show a drop down of options. Alternatively, the customer can go to the activities page.
+If a customer wants to make a change and update an existing activity from the welcome page they are able to fill in the update form and then click submit. 
 The final part of the application at this stage would allow for the user to delete their created account should they decide they do not want to use the application. To do this, they can navigate to their profile page where they can then delete their account.
 
 </details>
@@ -386,12 +352,58 @@ The final part of the application at this stage would allow for the user to dele
 
 ## Known Issues
 
+* Currently, on the frontend, the create and delete functionality works for routines. However, creation for users and exercises does not work yet on the front end. 
+* Crud functionality is fully operational from the back end and can be tested fully through postman. 
+* There were plenty of issues that I came across for GCP and in trying to get the database which was largely to do with connection through keys.
+
 [Back to Contents](#Contents)
 
 ## Future Improvements & possible features
 
-* Plan to add the ability to allow user to upload a profile picture
-* allow for 0AUTH social media sign in 
+* complete creation and update functionality for users and exercises
+* link backend MySQL to application
+* add log in functionality
+
+## Long Term Improvements
+
+## Data Protection (GDPR)
+
+<details>
+
+Despite the United kingdom breaking from the European Union, GDPR laws still come into play as potential customers may be from EU countries and the law stipulates that any applications that allow this kind of access must
+be GDPR compliant. The major directive power of the law is that it empowers the individual to control their data. Entities that ask for personal data online must disclose to the individual what will happen to the data, who has access to the data and 
+who can view their data from the moment it is submitted. This brings to light the importance of security for web apps.
+
+The four most important aspects of the law dictate:
+
+* > Easier access to your own data: individuals will have more information on how their data is processed and this information should be available in a clear and understandable way.
+* > A right to data portability: it will be easier to transfer your personal data between service providers.
+* > A clarified 'right to be forgotten': when you no longer want your data to be processed, and provided that there are no legitimate grounds for retaining it, the data will be delete.
+* >The right to know when your data has been hacked: For example, companies and organizations must notify the national supervisory authority of serious data breaches as soon as possible so that users can take appropriate measures.
+
+</details>
+
+## Security
+
+<details>
+
+Following best practice guidance, the application will hold and implement as little personal data as is possible such as the birth name, email and country of residence. It should be noted that as the application grows, the need for more personal information is also likely to grow.
+The data procured must be encrypted and hashed to avoid any form of data extraction during a data breach and that individuals are kept up to date with any such exposures. OAUTH is one potential way of minimising personal data use whilst increasing the use of authentication ID however, due to time contraints 
+it is unlikely to have been implemented for the current project deadline. There will be a table to highlight what will be implemented into the application and what will be put on hold for future sprints should the opportunity arise.
+
+Since the application will require authentication, HTTPS would be needed, and it would be prudent to ensure that SSL certificates are up to date and properly deployed to avoid vulnerabilities to SSL protocols.
+The application will also take in some personal information (through registration or contact form) such as emails and names and we must ensure that the customers are informed and clear on how this data is used and for how long it is stored. This will be implemented through the use of a terms and conditions as part of the registration process to create an account.
+The information stored will be encrypted and stored on the GCP. Google Cloud will be in charge of ensuring that the data is stored safely and it is in their remit on legals grounds posited by the GDPR. As a developer I do not need to concern myself about this part of my obligation.
+Users must have proper notice about the use of cookies used by the application. Users should be told that cookies are in use and what the cookies would be used for. Users should also have the choice to accept or deny cookies. Cookies must be properly destroyed after a user session has been concluded through logout or session inactivity. At this point, the application will not be storing data for commercial purposes.
+The application is purely for the user to store their activities and their personal use. In the future this may change as it would make financial sense for advertising.
+
+When registering for an account, users will be asked to create security questions which must not include personal components, as per GDPR. If it is possible, in the future two-factor authentication will be where I would want to strive for the application to be in but this will not be in the current implementation fo the application.
+Another part of the registration will incorporate the terms and conditions which is an opportunity for clients to really become clear on what it is that they have signed up for and how their data will be used. An enforcement mechanism is necessary to have clear evidence that users have agreed to terms and conditions and only then can they use the application.
+Any user who decides to delete their account must have a clear way of doing so and once they have left the service their account information must be deleted. 
+
+Failure in any of the mandated points of the GDPR will lead to high penalties.
+
+</details>
 
 [Back to Contents](#Contents)
 
